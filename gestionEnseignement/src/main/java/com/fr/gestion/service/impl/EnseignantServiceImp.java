@@ -13,7 +13,6 @@ import com.fr.gestion.service.IEnseignantService;
 import com.fr.gestion.web.model.EnseignantDto;
 
 @Service
-
 public class EnseignantServiceImp implements IEnseignantService {
 
 	@Autowired
