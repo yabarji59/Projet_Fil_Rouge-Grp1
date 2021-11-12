@@ -51,8 +51,8 @@ public class CoursServiceImp implements ICoursService {
 
 	@Override
 	public CoursDto findByIdCours(int idCours) {
-		Optional<CoursDo> coursDoOptional=this.coursDao.findById(idCours);
-		if(coursDoOptional.isEmpty()) {
+		Optional<CoursDo> coursDoOptional = this.coursDao.findById(idCours);
+		if (coursDoOptional.isEmpty()) {
 			return null;
 		}
 		return mapToCoursDto(coursDoOptional.get());
@@ -60,14 +60,28 @@ public class CoursServiceImp implements ICoursService {
 
 	@Override
 	public void createCours(CoursDto cours) {
-		// TODO Auto-generated method stub
-		
+		CoursDo coursDo = new CoursDo();
+		coursDo = mapToCoursDo(cours);
+		coursDao.save(coursDo);
+
+	}
+
+	private CoursDo mapToCoursDo(CoursDto coursDto) {
+		CoursDo coursDo = new CoursDo();
+		if (coursDto == null) {
+			return null;
+		}
+		coursDo.setIdCours(coursDto.getIdCours());
+		coursDo.setLibelle(coursDto.getLibelle());
+		return coursDo;
 	}
 
 	@Override
 	public void updateCours(CoursDto cours) {
-		// TODO Auto-generated method stub
-		
+		CoursDo coursDo = new CoursDo();
+		coursDo = mapToCoursDo(cours);
+		coursDao.save(coursDo);
+
 	}
 
 }
