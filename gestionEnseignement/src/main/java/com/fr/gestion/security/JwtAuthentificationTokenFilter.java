@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.web.filter.GenericFilterBean;
 
 public class JwtAuthentificationTokenFilter extends GenericFilterBean {
@@ -15,7 +16,6 @@ public class JwtAuthentificationTokenFilter extends GenericFilterBean {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		// TODO Auto-generated method stub
-
 	}
 
 }
