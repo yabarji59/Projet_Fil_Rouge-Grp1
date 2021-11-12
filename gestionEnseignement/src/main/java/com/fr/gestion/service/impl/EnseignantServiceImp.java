@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import com.fr.gestion.persistence.entities.EnseignantDo;
@@ -15,8 +16,11 @@ import com.fr.gestion.web.model.EnseignantDto;
 @Service
 public class EnseignantServiceImp implements IEnseignantService {
 
-	@Autowired
-	private ModelMapper modelMapper;
+	@Bean
+	   public ModelMapper modelMapper() {
+	      ModelMapper modelMapper = new ModelMapper();
+	      return modelMapper;
+	   }
 
 	@Autowired
 	private IEnseignantDao enseignantDao;
