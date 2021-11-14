@@ -10,6 +10,9 @@ import { AuthService } from './services/auth.service';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { CoursComponent } from './pages/cours/cours.component';
+import { CoursService } from './services/cours.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
 { path: 'auth', component: AuthComponent },
@@ -24,13 +27,16 @@ const appRoutes: Routes = [
     FooterComponent,
     HeaderComponent,
     NavbarComponent,
+    CoursComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     AuthService,
+    CoursService
   ],
   bootstrap: [AppComponent]
 })
