@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +12,13 @@ import com.fr.gestion.persistence.entities.CoursDo;
 import com.fr.gestion.persistence.repository.ICoursDao;
 import com.fr.gestion.service.ICoursService;
 import com.fr.gestion.web.model.CoursDto;
+import com.fr.gestion.web.model.EnseignantDto;
 
 @Service
 public class CoursServiceImp implements ICoursService {
+
+	@Autowired
+	private ModelMapper modelMapper;
 
 	@Autowired
 	private ICoursDao coursDao;
@@ -24,21 +29,12 @@ public class CoursServiceImp implements ICoursService {
 		return mapToListCoursDto(coursList);
 	}
 
-	private CoursDto mapToCoursDto(CoursDo coursDo) {
-		CoursDto coursDto = new CoursDto();
-		if (coursDo == null) {
-			return null;
-		}
-
-		coursDto.setIdCours(coursDo.getIdCours());
-		coursDto.setLibelle(coursDo.getLibelle());
-		return coursDto;
-	}
+	
 
 	private List<CoursDto> mapToListCoursDto(final List<CoursDo> listCoursDo) {
 		final List<CoursDto> listCoursDto = new ArrayList<>();
 		for (CoursDo coursDo : listCoursDo) {
-			listCoursDto.add(mapToCoursDto(coursDo));
+			listCoursDto.add(modelMapper.map(coursDo, CoursDto.class));
 		}
 
 		return listCoursDto;
@@ -55,31 +51,22 @@ public class CoursServiceImp implements ICoursService {
 		if (coursDoOptional.isEmpty()) {
 			return null;
 		}
-		return mapToCoursDto(coursDoOptional.get());
+		return modelMapper.map(coursDoOptional.get(), CoursDto.class);
 	}
 
 	@Override
 	public void createCours(CoursDto cours) {
 		CoursDo coursDo = new CoursDo();
-		coursDo = mapToCoursDo(cours);
+		coursDo = modelMapper.map(coursDo, CoursDo.class);
 		coursDao.save(coursDo);
 
 	}
 
-	private CoursDo mapToCoursDo(CoursDto coursDto) {
-		CoursDo coursDo = new CoursDo();
-		if (coursDto == null) {
-			return null;
-		}
-		coursDo.setIdCours(coursDto.getIdCours());
-		coursDo.setLibelle(coursDto.getLibelle());
-		return coursDo;
-	}
-
+	
 	@Override
 	public void updateCours(CoursDto cours) {
 		CoursDo coursDo = new CoursDo();
-		coursDo = mapToCoursDo(cours);
+		coursDo = modelMapper.map(coursDo, CoursDo.class);
 		coursDao.save(coursDo);
 
 	}
