@@ -2,13 +2,10 @@ package com.fr.gestion.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fr.gestion.persistence.entities.ClasseDo;
 import com.fr.gestion.persistence.entities.EnseignantDo;
 import com.fr.gestion.persistence.repository.IEnseignantDao;
 import com.fr.gestion.service.IEnseignantService;

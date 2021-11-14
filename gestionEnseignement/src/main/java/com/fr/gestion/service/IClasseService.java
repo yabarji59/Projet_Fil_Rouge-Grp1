@@ -20,4 +20,11 @@ public interface IClasseService {
 	
 	public void enableClasse(int idClasse);
 
+	/**
+	 * Permet de recuperer la liste des classe d'un Utilisateur à partir de son id
+	 * @param idUtilisateur
+	 * @return listeClasseOneUser
+	 */
+	List<ClasseDto> findAllClasseOneUser(Integer idUtilisateur);
+
 }

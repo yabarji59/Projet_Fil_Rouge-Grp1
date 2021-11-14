@@ -116,4 +116,10 @@ public class ClasseServiceImp implements IClasseService {
 		}
 
 	}
+    @Override
+    public List<ClasseDto> findAllClasseOneUser(final Integer idUtilisateur) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }
