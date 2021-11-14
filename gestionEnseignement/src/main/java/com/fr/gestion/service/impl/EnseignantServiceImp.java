@@ -2,11 +2,13 @@ package com.fr.gestion.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fr.gestion.persistence.entities.ClasseDo;
 import com.fr.gestion.persistence.entities.EnseignantDo;
 import com.fr.gestion.persistence.repository.IEnseignantDao;
 import com.fr.gestion.service.IEnseignantService;
@@ -69,4 +71,16 @@ public class EnseignantServiceImp implements IEnseignantService {
 
 	}
 
+	@Override
+	public List<EnseignantDto> findAllEnseignantByAvailable() {
+		
+		//List<EnseignantDo> enseignantListDo = this.enseignantDao.findAllEnseignantByAvailable();
+		//List<EnseignantDto> enseignantListDto = new ArrayList<>();
+		//for (EnseignantDo enseignantDo : enseignantList) {
+			//enseignantListDto.add(modelMapper.map(enseignantDo, EnseignantDto.class));
+		//}
+
+		//return enseignantListDto;
+		return null;
+	}
 }

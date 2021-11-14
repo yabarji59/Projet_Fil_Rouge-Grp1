@@ -68,4 +68,10 @@ public class EleveServiceImp implements IEleveService {
 
 	}
 
+	@Override
+	public List<EleveDto> findAllEleveByAvailable() {
+		
+		return null;
+	}
+
 }

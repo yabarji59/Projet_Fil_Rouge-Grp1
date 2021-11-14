@@ -7,6 +7,8 @@ import com.fr.gestion.web.model.EleveDto;
 
 public interface IEleveService {
 	
+	List<EleveDto> findAllEleveByAvailable();
+	
 	List<EleveDto> findAllEleve();
 	
 	EleveDto findEleveById(Integer idEleve);
@@ -19,4 +21,7 @@ public interface IEleveService {
 	
 	
 	void deleteEleve(Integer idEleve);
+	
+	
+	
 }
