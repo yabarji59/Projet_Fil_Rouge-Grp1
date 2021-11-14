@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +12,13 @@ import com.fr.gestion.persistence.entities.ClasseDo;
 import com.fr.gestion.persistence.repository.IClasseDao;
 import com.fr.gestion.service.IClasseService;
 import com.fr.gestion.web.model.ClasseDto;
+import com.fr.gestion.web.model.CoursDto;
 
 @Service
 public class ClasseServiceImp implements IClasseService {
+	
+	@Autowired
+	private ModelMapper modelMapper;
 
 	@Autowired
 	private IClasseDao classeDao;
@@ -24,28 +29,12 @@ public class ClasseServiceImp implements IClasseService {
 		return mapToListClasseDto(classeList);
 	}
 
-	private ClasseDto mapToClasseDto(ClasseDo classeDo) {
-		ClasseDto classeDto = new ClasseDto();
-		if (classeDo == null) {
-			return null;
-		}
-
-		classeDto.setIdClasse(classeDo.getIdClasse());
-		classeDto.setCapaciteMax(classeDo.getCapaciteMax());
-		classeDto.setCapaciteMin(classeDo.getCapaciteMin());
-		classeDto.setEnable(classeDo.isEnable());
-		classeDto.setNiveau(classeDo.getNiveau());
-		classeDto.setEnseignantDo(classeDo.getEnseignantDo());
-		classeDto.setUtilisateur(classeDo.getUtilisateur());
-		classeDto.setListeDesEleves(classeDo.getListeDesEleves());
-		classeDto.setListeCours(classeDo.getListeCours());
-		return classeDto;
-	}
+	
 
 	private List<ClasseDto> mapToListClasseDto(final List<ClasseDo> listClasseDo) {
 		final List<ClasseDto> listClasseDto = new ArrayList<>();
 		for (ClasseDo classeDo : listClasseDo) {
-			listClasseDto.add(mapToClasseDto(classeDo));
+			listClasseDto.add(modelMapper.map(classeDo, ClasseDto.class));
 		}
 
 		return listClasseDto;
@@ -63,39 +52,22 @@ public class ClasseServiceImp implements IClasseService {
 		if (classeDoOptional.isEmpty()) {
 			return null;
 		}
-		return mapToClasseDto(classeDoOptional.get());
+		return modelMapper.map(classeDoOptional.get(), ClasseDto.class);
 	}
 
 	@Override
 	public void createClasse(ClasseDto classe) {
 		ClasseDo classeDo = new ClasseDo();
-		classeDo = mapToClasseDo(classe);
+		classeDo = modelMapper.map(classe, ClasseDo.class);
 		classeDao.save(classeDo);
 
 	}
 
-	private ClasseDo mapToClasseDo(ClasseDto classeDto) {
-		ClasseDo classeDo = new ClasseDo();
-		if (classeDto == null) {
-			return null;
-		}
-		classeDto.setIdClasse(classeDo.getIdClasse());
-		classeDto.setCapaciteMax(classeDo.getCapaciteMax());
-		classeDto.setCapaciteMin(classeDo.getCapaciteMin());
-		classeDto.setEnable(classeDo.isEnable());
-		classeDto.setNiveau(classeDo.getNiveau());
-		classeDto.setEnseignantDo(classeDo.getEnseignantDo());
-		classeDto.setUtilisateur(classeDo.getUtilisateur());
-		classeDto.setListeDesEleves(classeDo.getListeDesEleves());
-		classeDto.setListeCours(classeDo.getListeCours());
-
-		return classeDo;
-	}
-
+	
 	@Override
 	public void updateClasse(ClasseDto classe) {
 		ClasseDo classeDo = new ClasseDo();
-		classeDo = mapToClasseDo(classe);
+		classeDo = modelMapper.map(classe, ClasseDo.class);
 		classeDao.save(classeDo);
 
 	}
