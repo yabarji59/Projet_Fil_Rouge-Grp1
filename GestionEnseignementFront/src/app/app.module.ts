@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { PageAccueilComponent } from './page-accueil/page-accueil.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { AuthService } from './services/auth.service';
-import { UtilisateurComponent } from './pages/utilisateur/utilisateur.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -22,7 +21,6 @@ const appRoutes: Routes = [
     AppComponent,
     PageAccueilComponent,
     AuthComponent,
-    UtilisateurComponent,
     FooterComponent,
     HeaderComponent,
     NavbarComponent,
