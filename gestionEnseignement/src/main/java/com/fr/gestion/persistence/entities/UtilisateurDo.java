@@ -7,13 +7,15 @@ import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 /**
  * Classe UtilisateurDo
@@ -30,22 +32,23 @@ public class UtilisateurDo {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "utilisateur_id_user_seq")
     @Column(name = "id_utilisateur")
     private Integer        idUtilisateur;
-    private String         nomUtilisateur;
-    private String         prenomUtilisateur;
-    private String         emailUtilisateur;
-    private String         passwordUtilisateur;
+    private String         nom;
+    private String         prenom;
+    private String         email;
+    private String         password;
     private String         tokenSecret;
-    
-    @ElementCollection(fetch = FetchType.EAGER)
+
+    @ElementCollection
     @CollectionTable(name = "ROLES")
-    private List<String>       roles;
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<String>   roles;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "utilisateur")
     private List<ClasseDo> listeDesClasses;
-    
-    public boolean             accountNonExpired;
-    public boolean             accountNonLocked;
-    public boolean             credentialsNonExpired;
+
+    public boolean         accountNonExpired;
+    public boolean         accountNonLocked;
+    public boolean         credentialsNonExpired;
 
     //Constructer
     public UtilisateurDo() {
@@ -61,36 +64,36 @@ public class UtilisateurDo {
         this.idUtilisateur = idUtilisateur;
     }
 
-    public String getNomUtilisateur() {
-        return nomUtilisateur;
+    public String getNom() {
+        return nom;
     }
 
-    public void setNomUtilisateur(final String nomUtilisateur) {
-        this.nomUtilisateur = nomUtilisateur;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public String getPrenomUtilisateur() {
-        return prenomUtilisateur;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public void setPrenomUtilisateur(final String prenomUtilisateur) {
-        this.prenomUtilisateur = prenomUtilisateur;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
-    public String getEmailUtilisateur() {
-        return emailUtilisateur;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailUtilisateur(final String emailUtilisateur) {
-        this.emailUtilisateur = emailUtilisateur;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getPasswordUtilisateur() {
-        return passwordUtilisateur;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswordUtilisateur(final String passwordUtilisateur) {
-        this.passwordUtilisateur = passwordUtilisateur;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getTokenSecret() {
@@ -109,14 +112,12 @@ public class UtilisateurDo {
         this.listeDesClasses = listeDesClasses;
     }
 
-	public List<String> getRoles() {
-		return roles;
-	}
+    public List<String> getRoles() {
+        return roles;
+    }
 
-	public void setRoles(List<String> roles) {
-		this.roles = roles;
-	}
-    
-    
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
 
 }

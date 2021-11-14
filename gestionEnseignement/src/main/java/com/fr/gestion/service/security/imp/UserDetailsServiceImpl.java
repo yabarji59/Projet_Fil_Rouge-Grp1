@@ -32,7 +32,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		UtilisateurDo userE = utilisateurDao.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
 		Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority("ADMIN"));
-		return new UtilisateurSecurityDto(userE.getIdUtilisateur(), userE.getEmailUtilisateur(), userE.getPasswordUtilisateur(), authorities, true, LocalDate.now(), userE.getTokenSecret());
+		return new UtilisateurSecurityDto(userE.getIdUtilisateur(), userE.getEmail(), userE.getPassword(), authorities, true, LocalDate.now(), userE.getTokenSecret());
 	}
 
 }
