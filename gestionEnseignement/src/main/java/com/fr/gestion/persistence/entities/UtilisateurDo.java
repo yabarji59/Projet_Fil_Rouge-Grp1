@@ -3,8 +3,11 @@ package com.fr.gestion.persistence.entities;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,9 +35,17 @@ public class UtilisateurDo {
     private String         emailUtilisateur;
     private String         passwordUtilisateur;
     private String         tokenSecret;
+    
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "ROLES")
+    private List<String>       roles;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "utilisateur")
     private List<ClasseDo> listeDesClasses;
+    
+    public boolean             accountNonExpired;
+    public boolean             accountNonLocked;
+    public boolean             credentialsNonExpired;
 
     //Constructer
     public UtilisateurDo() {
@@ -97,5 +108,15 @@ public class UtilisateurDo {
     public void setListeDesClasses(final List<ClasseDo> listeDesClasses) {
         this.listeDesClasses = listeDesClasses;
     }
+
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
+	}
+    
+    
 
 }
