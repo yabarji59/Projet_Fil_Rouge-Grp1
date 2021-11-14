@@ -1,7 +1,9 @@
 package com.fr.gestion.service.impl;
 
-import com.fr.gestion.service.IEleveService;
+import org.springframework.stereotype.Service;
 
+import com.fr.gestion.service.IEleveService;
+@Service
 public class EleveServiceImp implements IEleveService {
 
 }
