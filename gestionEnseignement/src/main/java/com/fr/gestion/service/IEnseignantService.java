@@ -36,7 +36,7 @@ public interface IEnseignantService {
 	 * @param id
 	 * @param enseignantDto
 	 */
-	void updateEnseignant(Integer id, EnseignantDto enseignantDto);
+	void updateEnseignant(Integer idEnseignant, EnseignantDto enseignantDto);
 
 	/**
 	 * Permet de supprimer un enseignant
