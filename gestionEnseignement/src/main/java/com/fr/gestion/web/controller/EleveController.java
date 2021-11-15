@@ -58,7 +58,7 @@ public class EleveController {
 		}
 	}
 
-	@DeleteMapping({ "/enseignants/{id}" })
+	@DeleteMapping({ "/eleves/{id}" })
 	public void delete(@PathVariable(value = "id") Integer id) {
 		this.eleveService.deleteEleve(id);
 
