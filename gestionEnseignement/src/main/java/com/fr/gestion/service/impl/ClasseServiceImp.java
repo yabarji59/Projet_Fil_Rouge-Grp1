@@ -12,11 +12,10 @@ import com.fr.gestion.persistence.entities.ClasseDo;
 import com.fr.gestion.persistence.repository.IClasseDao;
 import com.fr.gestion.service.IClasseService;
 import com.fr.gestion.web.model.ClasseDto;
-import com.fr.gestion.web.model.CoursDto;
 
 @Service
 public class ClasseServiceImp implements IClasseService {
-	
+
 	@Autowired
 	private ModelMapper modelMapper;
 
@@ -28,8 +27,6 @@ public class ClasseServiceImp implements IClasseService {
 		List<ClasseDo> classeList = this.classeDao.findAll();
 		return mapToListClasseDto(classeList);
 	}
-
-	
 
 	private List<ClasseDto> mapToListClasseDto(final List<ClasseDo> listClasseDo) {
 		final List<ClasseDto> listClasseDto = new ArrayList<>();
@@ -63,7 +60,6 @@ public class ClasseServiceImp implements IClasseService {
 
 	}
 
-	
 	@Override
 	public void updateClasse(ClasseDto classe) {
 		ClasseDo classeDo = new ClasseDo();
