@@ -109,4 +109,7 @@ public class EleveDo {
         this.classe = classe;
     }
 
+    public void save(EleveDo eleveDo) {
+    }
+
 }
