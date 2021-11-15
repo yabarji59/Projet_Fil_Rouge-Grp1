@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageAccueilComponent } from './page-accueil/page-accueil.component';
+import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
 import { CoursComponent } from './pages/cours/cours.component';
+import { AuthComponent } from './pages/auth/auth.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
     path: 'Cours',
     component: CoursComponent
 },
-  { path: '**', component: PageAccueilComponent }
+  { path: '**', component: PageAccueilComponent },
+  { path: 'auth', component: AuthComponent }
 
 ];
 
