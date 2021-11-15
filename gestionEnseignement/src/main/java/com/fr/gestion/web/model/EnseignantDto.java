@@ -96,5 +96,11 @@ public class EnseignantDto {
     public void setClasse(final ClasseDo classe) {
         this.classe = classe;
     }
+    @Override
+    public String toString() {
+        return "{" + ",nomEnseignant='" + getNomEnseignant() + "'" + ", penomEnseignant='" + getPrenomEnseignant() + "'"
+               + ", emailEnseignant='" + getEmailEnseignant() + "'" + ",telephoneEnseignant='" + getTelephoneEnseignant() + "'"
+        		+ ",ageEnseignant='" + getAgeEnseignant() +"'" +",adresseEnseignant='" + getAdresseEnseignant() +"'"   + ", available='" + isAvailable() + "' "+"}";
+    }
 
 }
