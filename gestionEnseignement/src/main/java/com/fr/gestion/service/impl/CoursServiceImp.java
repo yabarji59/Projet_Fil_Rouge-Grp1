@@ -57,7 +57,7 @@ public class CoursServiceImp implements ICoursService {
 	@Override
 	public void createCours(CoursDto cours) {
 		CoursDo coursDo = new CoursDo();
-		coursDo = modelMapper.map(coursDo, CoursDo.class);
+		coursDo = modelMapper.map(cours, CoursDo.class);
 		coursDao.save(coursDo);
 
 	}
@@ -66,7 +66,7 @@ public class CoursServiceImp implements ICoursService {
 	@Override
 	public void updateCours(CoursDto cours) {
 		CoursDo coursDo = new CoursDo();
-		coursDo = modelMapper.map(coursDo, CoursDo.class);
+		coursDo = modelMapper.map(cours, CoursDo.class);
 		coursDao.save(coursDo);
 
 	}
