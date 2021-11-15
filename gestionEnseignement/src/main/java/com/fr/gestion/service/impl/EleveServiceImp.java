@@ -15,7 +15,7 @@ import com.fr.gestion.web.model.EleveDto;
 @Service
 public class EleveServiceImp implements IEleveService {
 
-    @Autowired
+	@Autowired
 	private ModelMapper modelMapper;
 
 	@Autowired
@@ -52,6 +52,7 @@ public class EleveServiceImp implements IEleveService {
 
 	@Override
 	public void updateEleve(final Integer idEleve, EleveDto eleveDto) {
+
 		EleveDo eleveDo = eleveDao.findById(idEleve).get();
 		eleveDo.setNomEleve(eleveDto.getNomEleve());
 		eleveDo.setPrenomEleve(eleveDto.getPrenomEleve());
@@ -67,7 +68,6 @@ public class EleveServiceImp implements IEleveService {
 	public void deleteEleve(final Integer idEleve) {
 		this.eleveDao.deleteById(idEleve);
 
-    }
+	}
 
 }
-

@@ -113,5 +113,7 @@ public class EnseignantDo {
     public void setClasse(final ClasseDo classe) {
         this.classe = classe;
     }
+    
+    
 
 }
