@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes } from '@angular/router';
 
@@ -15,7 +16,10 @@ const appRoutes: Routes = [
 { path: 'auth', component: AuthComponent },
 
 ]
+import { PageAccueilComponent } from './page/page-accueil/page-accueil.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const appRoutes: Routes = [{ path: '', component: PageAccueilComponent }];
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +29,18 @@ const appRoutes: Routes = [
     HeaderComponent,
     NavbarComponent,
   ],
+  declarations: [AppComponent, PageAccueilComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     AuthService,
   ],
   bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
