@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes } from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PageAccueilComponent } from './page-accueil/page-accueil.component';
+import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { AuthService } from './services/auth.service';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -12,12 +11,6 @@ import { HeaderComponent } from './shared/header/header.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { CoursComponent } from './pages/cours/cours.component';
 import { CoursService } from './services/cours.service';
-import { HttpClientModule } from '@angular/common/http';
-
-const appRoutes: Routes = [
-{ path: 'auth', component: AuthComponent },
-
-]
 
 @NgModule({
   declarations: [
@@ -27,7 +20,7 @@ const appRoutes: Routes = [
     FooterComponent,
     HeaderComponent,
     NavbarComponent,
-    CoursComponent,
+    CoursComponent
   ],
   imports: [
     BrowserModule,
@@ -40,4 +33,4 @@ const appRoutes: Routes = [
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
