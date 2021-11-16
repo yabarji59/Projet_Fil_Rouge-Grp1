@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Eleve } from 'src/app/shared/model/eleve.model';
 
 @Component({
   selector: 'app-eleve',
@@ -6,15 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./eleve.component.css']
 })
 export class EleveComponent implements OnInit {
+  // Créer un tableau eleves en utilisant l'interface
   listEleve: Eleve[] = [];
   constructor() { }
 
   ngOnInit(): void {
-    this.eleveService.getEleve().subscribe(data =>{       
-      console.log(data);
-      this.listEleve= data;
-    })
-  }
+    // Relier les données 
+  // //   this.eleveService.getEleve().subscribe(data =>{       
+  // //    
+  // //     this.listEleve= data;
+  // //   })
+ }
   }
 
 

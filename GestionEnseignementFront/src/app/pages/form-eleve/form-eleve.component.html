@@ -7,30 +7,30 @@
         </div>
         <div class="col-lg-7 px-5 pt-5">
          
-          <h4> Se connecter à mon compte</h4>
-       
+          <h4> Gestion élèves</h4>
+       <form [formGroup]="addCoursForm">
 
             <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="nom" placeholder="nom" class="form-control my-3 p-4">
+                  <input type="nom" placeholder=" {{eleve.nom}}" class="form-control my-3 p-4">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="prenom" placeholder="prenom" class="form-control my-3 p-4">
+                  <input type="prenom" placeholder="{{eleve.prenom}}" class="form-control my-3 p-4">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="age" placeholder="âge" class="form-control my-3 p-4">
+                  <input type="age" placeholder="{{eleve.age}}{{ans}}" class="form-control my-3 p-4">
                 </div>
               </div>
 
             <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="telephone"  placeholder="Téléphone" class="form-control my-3 p-4">
+                  <input type="telephone"  placeholder="{{eleve.telephone}}" class="form-control my-3 p-4">
                 </div>
               </div>
 
@@ -38,7 +38,7 @@
 
             <div class="form-row">
               <div class="col-lg-7">
-                <input type="email" placeholder="Email" class="form-control my-3 p-4">
+                <input type="email" placeholder="{{eleve.email}}" class="form-control my-3 p-4">
               </div>
 
             </div>
@@ -46,7 +46,7 @@
 
             <div class="form-row">
               <div class="col-lg-7">
-                <input type="Adresse" placeholder="Adresse" class="form-control  my-3 p-4">
+                <input type="Adresse" placeholder="{{eleve.adresse}}" class="form-control  my-3 p-4">
               </div>
 
             </div>
@@ -54,15 +54,15 @@
 
             <div class="form-row">
               <div class="col-lg-3">
-              <button type="button" class="btn1 mt-3 mb-5">Valider</button>   
+              <button   type="button" class="btn1 mt-3 mb-5"(click)="addEleve(id.eleve)">Valider</button>   
               </div>
              
               <div class="form-row">
                 <div class="col-lg-7">
-                <button type="button" class="btn1 mt-3 mb-5">Supprimer</button>   
+                <button type="button" class="btn1 mt-3 mb-5"(click)="deleteEleve(id.eleve)">Supprimer</button>   
                 </div>
 
-         
+              </form>
 
         </div>
 

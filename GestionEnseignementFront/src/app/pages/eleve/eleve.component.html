@@ -1,12 +1,9 @@
 <div class="row   my-5 pt-5">
        
     <div class="card" style="width: 18rem; margin: 30px;">
-        <img class="card-img-top" src="img/el2.jpg" alt="Card image cap">
+        <img class="card-img-top" src="assets/img/el2.jpg" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title"> {{eleve.nom}}</h5>
-          <p class="card-text"> {{eleve.prenom}}</p>
-          <p class="card-text"> {{eleve.telephone}}</p>
-          <a href="" class="btn btn-primary">Modifier</a>
+          <a routerLink="form-eleve/{{eleve.id}}" class="btn btn-primary" (click)=updateEleve(id.eleve)>Modifier</a>
         </div>
       </div>
 

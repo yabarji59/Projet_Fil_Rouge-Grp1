@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Eleve } from '../shared/model/eleve.model';
+import { FormEleve } from '../shared/model/form-eleve.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
@@ -7,15 +7,15 @@ export { }
 @Injectable({
   providedIn: 'root'
 })
-export class EleveService {
-  url_eleve = 'http://localhost:8080/api/eleve/'
+export class FormEleveService {
+  url_formEleve = 'http://localhost:8080/api/form-eleve/'
 
   constructor(private http: HttpClient) { }
 
   getAllEleve(): Observable<any> {
-    return this.http.get(this.url_eleve).
-      pipe(map((eleve) => {
-        return eleve;
+    return this.http.get(this.url_formEleve).
+      pipe(map((formEleve) => {
+        return formEleve;
       }));
 
   }

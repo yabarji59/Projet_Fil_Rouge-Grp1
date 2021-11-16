@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailsEleveComponent } from './details-eleve.component';
+import { FormEleveComponent } from './form-eleve.component';
 
 describe('DetailsEleveComponent', () => {
-  let component: DetailsEleveComponent;
-  let fixture: ComponentFixture<DetailsEleveComponent>;
+  let component: FormEleveComponent;
+  let fixture: ComponentFixture<FormEleveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailsEleveComponent ]
+      declarations: [ FormEleveComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailsEleveComponent);
+    fixture = TestBed.createComponent(FormEleveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
