@@ -2,6 +2,10 @@ package com.fr.gestion.service;
 
 import java.util.List;
 
+<<<<<<< HEAD
+=======
+import com.fr.gestion.persistence.entities.ClasseDo;
+>>>>>>> a927343ce279d98adc7ed5d4984208e6fffb64da
 import com.fr.gestion.web.model.ClasseDto;
 
 
