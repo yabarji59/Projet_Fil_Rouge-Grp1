@@ -18,6 +18,8 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoursEditComponent } from './pages/cours/cours-edit/cours-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CoursDeleteComponent } from './pages/cours/cours-delete/cours-delete.component';
+import { BannetteComponent } from './shared/banette/bannette/bannette.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     NavbarComponent,
     CoursComponent,
-    CoursEditComponent
+    CoursEditComponent,
+    CoursDeleteComponent,
+    BannetteComponent
   ],
   imports: [
     BrowserModule,
