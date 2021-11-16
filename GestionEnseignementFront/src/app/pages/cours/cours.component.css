@@ -1,0 +1,16 @@
+.flex-small-item{
+    margin-top: 15px !important;
+    position: absolute;
+    right: -80%;
+}
+#i-button-add {
+    background-color: #fff;
+    color:  rgb(37 136 193);
+    transform: scale(1.2);
+}
+
+#i-button-add:hover,
+#i-button-add:active {
+    color: #e5fa2a;
+    background-color: #fff;
+}

@@ -1,0 +1,25 @@
+<div>
+    <div class="row modal-title" mat-dialog-title>
+        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="margin-left: 10px;margin-top: 10px;">{{titre}}
+        </div>
+        <div class="col-xs-push-right col-sm-push-right col-md-push-right col-lg-push-right close"
+            (click)="closeModal()">X</div>
+    </div>
+</div>
+<form [formGroup]="addCoursForm">
+    <div class="modal-body">
+        <div class="row">
+
+            <div class="col-xs-6 form-group-sm">
+                <label for="libelle">Libelle </label>
+                <input name="libelle" class="form-control" type="text" formControlName="libelle">
+            </div>
+
+            <div class="row text-center">
+                <button type="button" class="btn modal-cancel-button" (click)="closeModal()">Annuler</button>
+                <button *ngIf="!editForm" type="button" class="btn modal-confirm-button" (click)="addCours()">Ajouter</button>
+                <button *ngIf="editForm" type="button" class="btn modal-confirm-button" (click)="updateCours()">Modifier</button>
+            </div>
+        </div>
+    </div>
+</form>

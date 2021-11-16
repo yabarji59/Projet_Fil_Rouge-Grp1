@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursService } from 'src/app/services/cours.service';
 import { Cours } from 'src/app/shared/model/cours.model';
+import {MatDialog} from '@angular/material/dialog';
+import { CoursEditComponent } from './cours-edit/cours-edit.component';
 
 @Component({
   selector: 'app-cours',
@@ -9,7 +11,7 @@ import { Cours } from 'src/app/shared/model/cours.model';
 })
 export class CoursComponent implements OnInit {
   coursList: Cours[] = [];
-  constructor(private coursService: CoursService) { }
+  constructor(private coursService: CoursService, private matDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.coursService.getCours().subscribe(data =>{       
@@ -17,5 +19,22 @@ export class CoursComponent implements OnInit {
       this.coursList= data;
     })
   }
-
+  openAddCours() {
+    const modal = this.matDialog.open(CoursEditComponent,
+      {
+        panelClass: 'custom-dialog-container',
+        disableClose: true,
+        data: { cours: null, modalType: 'add' }
+      });
+    modal.afterClosed().subscribe(() => this.coursService.getCours());
+  }
+  openUpdateCours(cours: Cours) {
+    const modal = this.matDialog.open(CoursEditComponent,
+      {
+        panelClass: 'custom-dialog-container',
+        disableClose: true,
+        data: { cours: cours, modalType: 'edit' }
+      });
+    modal.afterClosed().subscribe(() => this.coursService.getCours());
+  }
 }

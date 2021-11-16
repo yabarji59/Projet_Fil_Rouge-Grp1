@@ -11,6 +11,13 @@ import { HeaderComponent } from './shared/header/header.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { CoursComponent } from './pages/cours/cours.component';
 import { CoursService } from './services/cours.service';
+import { MatSliderModule } from '@angular/material/slider';
+import {
+  MatDialogModule
+} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CoursEditComponent } from './pages/cours/cours-edit/cours-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,12 +27,18 @@ import { CoursService } from './services/cours.service';
     FooterComponent,
     HeaderComponent,
     NavbarComponent,
-    CoursComponent
+    CoursComponent,
+    CoursEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSliderModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [
     AuthService,
