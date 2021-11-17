@@ -8,27 +8,38 @@ package com.fr.gestion.web.model;
  */
 public class CoursDto {
 
-    private Integer idCours;
-    private String  libelle;
+	private Integer idCours;
+	private String libelle;
+	private String description;
 
-    public CoursDto() {
-        // Empty method
-    }
+	public CoursDto() {
+		// Empty method
+	}
 
-    public Integer getIdCours() {
-        return idCours;
-    }
+	public Integer getIdCours() {
+		return idCours;
+	}
 
-    public void setIdCours(final Integer idCours) {
-        this.idCours = idCours;
-    }
+	public void setIdCours(final Integer idCours) {
+		this.idCours = idCours;
+	}
 
-    public String getLibelle() {
-        return libelle;
-    }
+	public String getLibelle() {
+		return libelle;
+	}
 
-    public void setLibelle(final String libelle) {
-        this.libelle = libelle;
-    }
+	public void setLibelle(final String libelle) {
+		this.libelle = libelle;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	
 
 }

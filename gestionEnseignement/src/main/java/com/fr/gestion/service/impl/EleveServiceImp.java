@@ -11,10 +11,6 @@ import com.fr.gestion.persistence.entities.EleveDo;
 import com.fr.gestion.persistence.repository.IEleveDao;
 import com.fr.gestion.service.IEleveService;
 import com.fr.gestion.web.model.EleveDto;
-<<<<<<< HEAD
-=======
-
->>>>>>> a927343ce279d98adc7ed5d4984208e6fffb64da
 @Service
 public class EleveServiceImp implements IEleveService {
 
