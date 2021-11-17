@@ -22,13 +22,15 @@ export class CoursEditComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public dialogData: any) {
       this.addCoursForm = this.formBuilder.group({
         libelle: ['', Validators.maxLength(1000)],
+        description: ['', Validators.maxLength(4000)],
       });
     if(this.dialogData.modalType == 'edit'){
       this.titre ='Modifier un cours';
       this.editForm= true;
       this.coursGet= this.dialogData.cours;
       this.addCoursForm.setValue({
-        libelle: this.dialogData.cours.libelle
+        libelle: this.dialogData.cours.libelle,
+        description: this.dialogData.cours.description
       });
     } else {
       this.titre ='Ajouter un cours';
@@ -46,6 +48,7 @@ export class CoursEditComponent implements OnInit {
   addCours(){
     let cours= new Cours();
     cours.libelle = this.addCoursForm.get('libelle')?.value;
+    cours.description = this.addCoursForm.get('description')?.value;
     this.coursService.createCours(cours).subscribe(
       result => {this.matDialog.closeAll();}
     ,errors =>{});
@@ -53,6 +56,7 @@ export class CoursEditComponent implements OnInit {
 
   updateCours(){
     this.coursGet.libelle = this.addCoursForm.get('libelle')?.value;
+    this.coursGet.description = this.addCoursForm.get('description')?.value;
     this.coursService.updateCours(this.coursGet).subscribe(
       result => {this.matDialog.closeAll();}
     ,errors =>{});

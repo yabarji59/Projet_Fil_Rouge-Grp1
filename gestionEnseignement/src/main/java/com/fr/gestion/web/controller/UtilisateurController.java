@@ -73,17 +73,6 @@ public class UtilisateurController {
 		
 			newUtilisateur = utilisateurService.update(utilisateur);
 
-		if (utilisateur.getListeDesClasses() != null) {
-			for (final ClasseDto classe : utilisateur.getListeDesClasses()) {
-				classe.setUtilisateur(utilisateur	);
-				
-			}
-		}
-
-		
-
-		newUtilisateur.setListeDesClasses(classeService.findAllClasseOneUser(newUtilisateur.getIdUtilisateur()));
-
 		return newUtilisateur;
 	}
 
