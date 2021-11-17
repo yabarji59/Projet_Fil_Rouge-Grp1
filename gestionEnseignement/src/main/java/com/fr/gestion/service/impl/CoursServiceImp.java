@@ -2,7 +2,6 @@ package com.fr.gestion.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import com.fr.gestion.persistence.entities.CoursDo;
 import com.fr.gestion.persistence.repository.ICoursDao;
 import com.fr.gestion.service.ICoursService;
 import com.fr.gestion.web.model.CoursDto;
-import com.fr.gestion.web.model.EnseignantDto;
 
 @Service
 public class CoursServiceImp implements ICoursService {
@@ -28,8 +26,6 @@ public class CoursServiceImp implements ICoursService {
 		List<CoursDo> coursList = this.coursDao.findAll();
 		return mapToListCoursDto(coursList);
 	}
-
-	
 
 	private List<CoursDto> mapToListCoursDto(final List<CoursDo> listCoursDo) {
 		final List<CoursDto> listCoursDto = new ArrayList<>();
@@ -47,11 +43,12 @@ public class CoursServiceImp implements ICoursService {
 
 	@Override
 	public CoursDto findByIdCours(int idCours) {
-		Optional<CoursDo> coursDoOptional = this.coursDao.findById(idCours);
-		if (coursDoOptional.isEmpty()) {
+		CoursDo coursDoOptional = coursDao.findById(idCours).get();
+
+		if (null == coursDoOptional) {
 			return null;
 		}
-		return modelMapper.map(coursDoOptional.get(), CoursDto.class);
+		return modelMapper.map(coursDoOptional, CoursDto.class);
 	}
 
 	@Override
@@ -62,12 +59,16 @@ public class CoursServiceImp implements ICoursService {
 
 	}
 
-	
 	@Override
 	public void updateCours(CoursDto cours) {
 		CoursDo coursDo = new CoursDo();
 		coursDo = modelMapper.map(cours, CoursDo.class);
-		coursDao.save(coursDo);
+
+		if (null != findByIdCours(cours.getIdCours())) {
+			coursDao.save(coursDo);
+		} else {
+			createCours(cours);
+		}
 
 	}
 

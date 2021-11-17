@@ -1,9 +1,5 @@
 package com.fr.gestion.web.model;
 
-import java.util.List;
-
-import com.fr.gestion.persistence.entities.ClasseDo;
-
 /**
  * Classe UtilisateurDto
  * 
@@ -18,9 +14,6 @@ public class UtilisateurDto {
 	private String emailUtilisateur;
 	private String passwordUtilisateur;
 	private String tokenSecret;
-	private List<String> roles;
-
-	private List<ClasseDto> listeDesClasses;
 
 	public UtilisateurDto() {
 		// Empty method
@@ -72,22 +65,6 @@ public class UtilisateurDto {
 
 	public void setTokenSecret(final String tokenSecret) {
 		this.tokenSecret = tokenSecret;
-	}
-
-	public List<ClasseDto> getListeDesClasses() {
-		return listeDesClasses;
-	}
-
-	public void setListeDesClasses(final List<ClasseDto> listeDesClasses) {
-		this.listeDesClasses = listeDesClasses;
-	}
-
-	public List<String> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(List<String> roles) {
-		this.roles = roles;
 	}
 
 }
