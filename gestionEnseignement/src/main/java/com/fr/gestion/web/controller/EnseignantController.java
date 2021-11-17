@@ -54,10 +54,9 @@ public class EnseignantController {
 	 */
 
 	@PostMapping({ "/enseignants" })
-	public void  save(@RequestBody EnseignantDto enseignant) {
-		EnseignantDto newEnseignant=enseignantService.createEnseignant(enseignant);
-		
-		
+	public void save(@RequestBody EnseignantDto enseignant) {
+		EnseignantDto newEnseignant = enseignantService.createEnseignant(enseignant);
+
 	}
 
 	/**
