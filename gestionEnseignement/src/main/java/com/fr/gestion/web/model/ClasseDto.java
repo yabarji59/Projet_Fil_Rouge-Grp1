@@ -2,11 +2,6 @@ package com.fr.gestion.web.model;
 
 import java.util.List;
 
-import com.fr.gestion.persistence.entities.CoursDo;
-import com.fr.gestion.persistence.entities.EleveDo;
-import com.fr.gestion.persistence.entities.EnseignantDo;
-import com.fr.gestion.persistence.entities.UtilisateurDo;
-
 /**
  * Classe ClasseDto
  * 
@@ -15,91 +10,91 @@ import com.fr.gestion.persistence.entities.UtilisateurDo;
  */
 public class ClasseDto {
 
-    private Integer       idClasse;
-    private String        niveau;
-    private Integer       capaciteMin;
-    private Integer       capaciteMax;
-    private boolean       enable;
+	private Integer idClasse;
+	private String niveau;
+	private Integer capaciteMin;
+	private Integer capaciteMax;
+	private boolean enable;
 
-    private UtilisateurDo utilisateur;
-    private EnseignantDo  enseignantDo;
-    private List<EleveDo> listeDesEleves;
-    private List<CoursDo> listeCours;
+	private UtilisateurDto utilisateur;
+	private EnseignantDto enseignantDo;
+	private List<EleveDto> listeDesEleves;
+	private List<CoursDto> listeCours;
 
-    public ClasseDto() {
-        // Empty method
-    }
+	public ClasseDto() {
+		// Empty method
+	}
 
-    public Integer getIdClasse() {
-        return idClasse;
-    }
+	public Integer getIdClasse() {
+		return idClasse;
+	}
 
-    public void setIdClasse(final Integer idClasse) {
-        this.idClasse = idClasse;
-    }
+	public void setIdClasse(final Integer idClasse) {
+		this.idClasse = idClasse;
+	}
 
-    public String getNiveau() {
-        return niveau;
-    }
+	public String getNiveau() {
+		return niveau;
+	}
 
-    public void setNiveau(final String niveau) {
-        this.niveau = niveau;
-    }
+	public void setNiveau(final String niveau) {
+		this.niveau = niveau;
+	}
 
-    public Integer getCapaciteMin() {
-        return capaciteMin;
-    }
+	public Integer getCapaciteMin() {
+		return capaciteMin;
+	}
 
-    public void setCapaciteMin(final Integer capaciteMin) {
-        this.capaciteMin = capaciteMin;
-    }
+	public void setCapaciteMin(final Integer capaciteMin) {
+		this.capaciteMin = capaciteMin;
+	}
 
-    public Integer getCapaciteMax() {
-        return capaciteMax;
-    }
+	public Integer getCapaciteMax() {
+		return capaciteMax;
+	}
 
-    public void setCapaciteMax(final Integer capaciteMax) {
-        this.capaciteMax = capaciteMax;
-    }
+	public void setCapaciteMax(final Integer capaciteMax) {
+		this.capaciteMax = capaciteMax;
+	}
 
-    public boolean isEnable() {
-        return enable;
-    }
+	public boolean isEnable() {
+		return enable;
+	}
 
-    public void setEnable(final boolean enable) {
-        this.enable = enable;
-    }
+	public void setEnable(final boolean enable) {
+		this.enable = enable;
+	}
 
-    public UtilisateurDo getUtilisateur() {
-        return utilisateur;
-    }
+	public UtilisateurDto getUtilisateur() {
+		return utilisateur;
+	}
 
-    public void setUtilisateur(final UtilisateurDo utilisateur) {
-        this.utilisateur = utilisateur;
-    }
+	public void setUtilisateur(UtilisateurDto utilisateur) {
+		this.utilisateur = utilisateur;
+	}
 
-    public EnseignantDo getEnseignantDo() {
-        return enseignantDo;
-    }
+	public EnseignantDto getEnseignantDo() {
+		return enseignantDo;
+	}
 
-    public void setEnseignantDo(final EnseignantDo enseignantDo) {
-        this.enseignantDo = enseignantDo;
-    }
+	public void setEnseignantDo(EnseignantDto enseignantDo) {
+		this.enseignantDo = enseignantDo;
+	}
 
-    public List<EleveDo> getListeDesEleves() {
-        return listeDesEleves;
-    }
+	public List<EleveDto> getListeDesEleves() {
+		return listeDesEleves;
+	}
 
-    public void setListeDesEleves(final List<EleveDo> listeDesEleves) {
-        this.listeDesEleves = listeDesEleves;
-    }
+	public void setListeDesEleves(List<EleveDto> listeDesEleves) {
+		this.listeDesEleves = listeDesEleves;
+	}
 
-    public List<CoursDo> getListeCours() {
-        return listeCours;
-    }
+	public List<CoursDto> getListeCours() {
+		return listeCours;
+	}
 
-    public void setListeCours(final List<CoursDo> listeCours) {
-        this.listeCours = listeCours;
-    }
+	public void setListeCours(List<CoursDto> listeCours) {
+		this.listeCours = listeCours;
+	}
 
 }

@@ -36,7 +36,7 @@ public interface IEnseignantService {
 	 * @param id
 	 * @param enseignantDto
 	 */
-	void updateEnseignant(Integer id, EnseignantDto enseignantDto);
+	void updateEnseignant(Integer idEnseignant, EnseignantDto enseignantDto);
 
 	/**
 	 * Permet de supprimer un enseignant
@@ -44,5 +44,15 @@ public interface IEnseignantService {
 	 * @param id
 	 */
 	void deleteEnseignant(Integer idEnseignant);
+	
+	/**
+	 * Permet d'afficher la liste des enseignants disponibles
+	 * 
+	 * @param id
+	 */
+	List<EnseignantDto> findAllEnseignantByAvailable();
+
 
 }
+
+

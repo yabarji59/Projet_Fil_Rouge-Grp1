@@ -15,6 +15,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 /**
  * Classe ClasseDo
  * 
@@ -43,6 +46,7 @@ public class ClasseDo {
     private EnseignantDo  enseignantDo;
 
     @OneToMany(mappedBy = "classe", fetch = FetchType.EAGER)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<EleveDo> listeDesEleves;
 
     @OneToMany
