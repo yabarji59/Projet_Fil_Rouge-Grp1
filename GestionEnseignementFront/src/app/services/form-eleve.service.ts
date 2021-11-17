@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { FormEleve } from '../shared/model/form-eleve.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
+import { Eleve } from '../shared/model/eleve.model';
 export { }
 @Injectable({
   providedIn: 'root'
@@ -20,19 +20,19 @@ export class FormEleveService {
 
   }
   getEleveById(idEleve: number): Observable<any> {
-    return this.http.get(this.url_eleve+idEleve).
+    return this.http.get(this.url_formEleve+idEleve).
       pipe(map((eleve) => {
         return eleve;
       }));
 
   }
   createEleve(eleve : Eleve): Observable<any> {
-    return this.http.post(this.url_eleve, eleve);
+    return this.http.post(this.url_formEleve, eleve);
   }
   updateEleve(eleve : Eleve): Observable<any> {
-    return this.http.put(this.url_eleve, eleve);
+    return this.http.put(this.url_formEleve, eleve);
   }
   deleteEleve(idEleve: number): Observable<any> {
-    return this.http.delete(this.url_eleve+idEleve);
+    return this.http.delete(this.url_formEleve+idEleve);
   }
 }

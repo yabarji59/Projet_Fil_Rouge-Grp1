@@ -21,8 +21,8 @@ const appRoutes: Routes = [
 ]
 import { CoursComponent } from './pages/cours/cours.component';
 import { CoursService } from './services/cours.service';
-import { MatSliderModule } from '@angular/material/slider';
-import {MatDialogModule} from '@angular/material/dialog';
+// import { MatSliderModule } from '@angular/material/slider';
+// import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoursEditComponent } from './pages/cours/cours-edit/cours-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -37,7 +37,7 @@ import { Routes } from '@angular/router';
     HeaderComponent,
     NavbarComponent,
     EleveComponent,
-    FormEleveComponent
+    FormEleveComponent,
     CoursComponent,
     CoursEditComponent
   ],
@@ -51,11 +51,11 @@ import { Routes } from '@angular/router';
     EleveService,
     //FormEleveService
     HttpClientModule,
-    MatSliderModule,
+    //MatSliderModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule,
+    //MatDialogModule,
     CoursService
   ],
   bootstrap: [AppComponent]

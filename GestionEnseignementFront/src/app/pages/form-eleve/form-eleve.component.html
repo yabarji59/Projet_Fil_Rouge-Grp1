@@ -1,3 +1,11 @@
+<div>
+  <div class="row modal-title" mat-dialog-title>
+      <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="margin-left: 10px;margin-top: 10px;">{{titre}}
+      </div>
+      <div class="col-xs-push-right col-sm-push-right col-md-push-right col-lg-push-right close"
+          (click)="closeModal()">X</div>
+  </div>
+</div>
 <div class="form my-5 mx-2">
       
     <div class="container">
@@ -8,29 +16,29 @@
         <div class="col-lg-7 px-5 pt-5">
          
           <h4> Gestion élèves</h4>
-       <form [formGroup]="addCoursForm">
+     
 
             <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="nom" placeholder=" {{eleve.nom}}" class="form-control my-3 p-4">
+                  <input type="nom" placeholder="nom" class="form-control my-3 p-4"formControlName="nom">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="prenom" placeholder="{{eleve.prenom}}" class="form-control my-3 p-4">
+                  <input type="prenom" placeholder="prenom" class="form-control my-3 p-4"formControlName="prenom">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="age" placeholder="{{eleve.age}}{{ans}}" class="form-control my-3 p-4">
+                  <input type="age" placeholder="age" class="form-control my-3 p-4" formControlName="âge">
                 </div>
               </div>
 
             <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="telephone"  placeholder="{{eleve.telephone}}" class="form-control my-3 p-4">
+                  <input type="telephone"  placeholder="telephone" class="form-control my-3 p-4 "formControlName="telephone">
                 </div>
               </div>
 
@@ -38,7 +46,7 @@
 
             <div class="form-row">
               <div class="col-lg-7">
-                <input type="email" placeholder="{{eleve.email}}" class="form-control my-3 p-4">
+                <input type="email" placeholder="email" class="form-control my-3 p-4"formControlName="email">
               </div>
 
             </div>
@@ -46,7 +54,7 @@
 
             <div class="form-row">
               <div class="col-lg-7">
-                <input type="Adresse" placeholder="{{eleve.adresse}}" class="form-control  my-3 p-4">
+                <input type="Adresse" placeholder="adresse" class="form-control  my-3 p-4"formControlName="adresse">
               </div>
 
             </div>
@@ -54,15 +62,14 @@
 
             <div class="form-row">
               <div class="col-lg-3">
-              <button   type="button" class="btn1 mt-3 mb-5"(click)="addEleve(id.eleve)">Valider</button>   
+              <button *ngIf="editForm"  type="button" class="btn1 mt-3 mb-5"(click)="addEleve(id.eleve)">Valider</button>   
               </div>
              
               <div class="form-row">
                 <div class="col-lg-7">
-                <button type="button" class="btn1 mt-3 mb-5"(click)="deleteEleve(id.eleve)">Supprimer</button>   
+                <button *ngIf="editForm" type="button" class="btn1 mt-3 mb-5"(click)="deleteEleve(id.eleve)">Supprimer</button>   
                 </div>
 
-              </form>
 
         </div>
 

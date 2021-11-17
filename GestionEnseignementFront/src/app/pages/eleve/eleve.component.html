@@ -1,9 +1,15 @@
 <div class="row   my-5 pt-5">
-       
-    <div class="card" style="width: 18rem; margin: 30px;">
+  <h2>Liste es élèves</h2> 
+  <span>
+    <i class="fas fa-plus-circle fa-2x" id="i-button-add" (click)="openAddEleve()"></i>
+</span>
+    <div *ngFor="let eleve of listEleve" class="card" style="width: 18rem; margin: 30px;">
         <img class="card-img-top" src="assets/img/el2.jpg" alt="Card image cap">
         <div class="card-body">
-          <a routerLink="form-eleve/{{eleve.id}}" class="btn btn-primary" (click)=updateEleve(id.eleve)>Modifier</a>
+          <h5 class="card-title">{{eleve.nom}}{{eleve.prenom}}</h5>
+          <p class="card-text">{{eleve.age}}</p>
+          <p class="card-text">{{eleve.telephone}}</p>
+          <a routerLink="form-eleve/{{eleve.id}}" class="btn btn-primary"(click)="openUpdateEleve(eleve)">Modifier</a>
         </div>
       </div>
 

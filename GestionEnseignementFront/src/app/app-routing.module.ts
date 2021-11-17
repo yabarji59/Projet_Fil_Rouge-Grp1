@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'eleve', component:EleveComponent  },
   // 2ème route 
   // component " user-details "
-  {path:'form-eleve/id', component:FormEleveComponent},
+  {path:'form-eleve/:id', component:FormEleveComponent},
   {
     path: 'Cours',
     component: CoursComponent
