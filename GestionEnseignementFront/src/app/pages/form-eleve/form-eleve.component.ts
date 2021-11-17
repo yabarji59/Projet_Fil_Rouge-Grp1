@@ -14,7 +14,7 @@ export class FormEleveComponent implements OnInit {
   addEleveForm: FormGroup;
   titre= '';
   editForm= false;
-  eleveGet: any;
+  eleveGet: string;
   constructor(
     private coursService: EleveService,
     private matDialog: MatDialog,

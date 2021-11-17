@@ -51,7 +51,7 @@ import { Routes } from '@angular/router';
     EleveService,
     //FormEleveService
     HttpClientModule,
-    //MatSliderModule,
+    MatSliderModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
