@@ -1,10 +1,14 @@
 package com.fr.gestion.persistence.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -24,7 +28,10 @@ public class CoursDo {
     @Column(name = "id_cours")
     private Integer idCours;
     private String  libelle;
-
+    
+    @OneToOne
+    private ClasseDo classe;
+     
     //Constructer
     public CoursDo() {
         // Empty method
@@ -47,4 +54,13 @@ public class CoursDo {
         this.libelle = libelle;
     }
 
+	public ClasseDo getClasse() {
+		return classe;
+	}
+
+	public void setClasse(final ClasseDo classe) {
+		this.classe = classe;
+	}
+
+    
 }

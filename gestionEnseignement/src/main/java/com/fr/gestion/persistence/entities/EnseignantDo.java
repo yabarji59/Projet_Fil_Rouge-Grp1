@@ -33,7 +33,7 @@ public class EnseignantDo {
     private String   adresseEnseignant;
     private boolean  available;
 
-    @OneToOne(mappedBy = "enseignantDo", fetch = FetchType.EAGER)
+    @OneToOne()
     private ClasseDo classe;
 
     //Constructer
