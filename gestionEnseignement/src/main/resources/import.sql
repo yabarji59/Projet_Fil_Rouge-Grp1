@@ -10,12 +10,12 @@ INSERT INTO public.classes(id_classe,capacite_max,capacite_min,enable,niveau,id_
 
 
 ALTER SEQUENCE cours_id_cours_seq RESTART WITH 1;
---INSERT INTO public.cours(id_cours, libelle, classe_id_classe) VALUES(0, '', 0);
-INSERT INTO public.cours(id_cours,libelle, classe_id_classe) VALUES ((select nextval('cours_id_cours_seq')),'Programme CP',1);
-INSERT INTO public.cours(id_cours,libelle, classe_id_classe) VALUES ((select nextval('cours_id_cours_seq')),'Programme CE1',2);
-INSERT INTO public.cours(id_cours,libelle, classe_id_classe) VALUES ((select nextval('cours_id_cours_seq')),'Programme CE2',3);
-INSERT INTO public.cours(id_cours,libelle, classe_id_classe) VALUES ((select nextval('cours_id_cours_seq')),'Programme CM1',4);
-INSERT INTO public.cours(id_cours,libelle, classe_id_classe) VALUES ((select nextval('cours_id_cours_seq')),'Programme CM2',5);
+--INSERT INTO public.cours(id_cours, description, libelle, classe_id_classe) VALUES(0, '', '', 0);
+INSERT INTO public.cours(id_cours,description,libelle, classe_id_classe) VALUES ((select nextval('cours_id_cours_seq')),'Les horaires d''enseignement à l''école élémentaire sont répartis par matière. Ils dépendent du cycle dans lequel se trouve l''enfant. La semaine scolaire ne peut pas dépasser 24 heures d''enseignement. L''année scolaire comporte 36 semaines d''école.','Programme CP',1);
+INSERT INTO public.cours(id_cours,description,libelle, classe_id_classe) VALUES ((select nextval('cours_id_cours_seq')),'Les horaires d''enseignement à l''école élémentaire sont répartis par matière. Ils dépendent du cycle dans lequel se trouve l''enfant. La semaine scolaire ne peut pas dépasser 24 heures d''enseignement. L''année scolaire comporte 36 semaines d''école.','Programme CE1',2);
+INSERT INTO public.cours(id_cours,description,libelle, classe_id_classe) VALUES ((select nextval('cours_id_cours_seq')),'Les horaires d''enseignement à l''école élémentaire sont répartis par matière. Ils dépendent du cycle dans lequel se trouve l''enfant. La semaine scolaire ne peut pas dépasser 24 heures d''enseignement. L''année scolaire comporte 36 semaines d''école.','Programme CE2',3);
+INSERT INTO public.cours(id_cours,description,libelle, classe_id_classe) VALUES ((select nextval('cours_id_cours_seq')),'Les horaires d''enseignement à l''école élémentaire sont répartis par matière. Ils dépendent du cycle dans lequel se trouve l''enfant. La semaine scolaire ne peut pas dépasser 24 heures d''enseignement. L''année scolaire comporte 36 semaines d''école.','Programme CM1',4);
+INSERT INTO public.cours(id_cours,description,libelle, classe_id_classe) VALUES ((select nextval('cours_id_cours_seq')),'Les horaires d''enseignement à l''école élémentaire sont répartis par matière. Ils dépendent du cycle dans lequel se trouve l''enfant. La semaine scolaire ne peut pas dépasser 24 heures d''enseignement. L''année scolaire comporte 36 semaines d''école.','Programme CM2',5);
 
 ALTER SEQUENCE enseignant_id_enseignant_seq RESTART WITH 1;
 --INSERT INTO public.enseignants(id_enseignant, adresse_enseignant, age_enseignant, available, email_enseignant, nom_enseignant, prenom_enseignant, telephone_enseignant, classe_id_classe) VALUES(0, '', 0, false, '', '', '', '', 0);
