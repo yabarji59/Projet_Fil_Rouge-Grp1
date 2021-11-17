@@ -48,7 +48,8 @@ public class CoursController {
 	 */
 	@GetMapping({ "/cours/{id}" })
 	public CoursDto findById(@PathVariable int id) {
-		return this.coursService.findByIdCours(id);
+		final CoursDto coursDto =coursService.findByIdCours(id);
+		return coursDto;
 	}
 
 	@PostMapping({ "/cours" })

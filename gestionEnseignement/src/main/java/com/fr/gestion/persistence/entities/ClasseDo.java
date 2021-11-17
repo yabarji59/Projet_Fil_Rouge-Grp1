@@ -26,102 +26,102 @@ import javax.persistence.Table;
 @SequenceGenerator(name = "classe_id_classe_seq", initialValue = 1, allocationSize = 1)
 public class ClasseDo {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "classe_id_classe_seq")
-    @Column(name = "id_classe")
-    private Integer       idClasse;
-    private String        niveau;
-    private Integer       capaciteMin;
-    private Integer       capaciteMax;
-    private boolean       enable;
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "classe_id_classe_seq")
+	@Column(name = "id_classe")
+	private Integer idClasse;
+	private String niveau;
+	private Integer capaciteMin;
+	private Integer capaciteMax;
+	private boolean enable;
 
-    @ManyToOne()
-    @JoinColumn(name = "id_utilisateur")
-    private UtilisateurDo utilisateur;
+	@ManyToOne()
+	@JoinColumn(name = "id_utilisateur")
+	private UtilisateurDo utilisateur;
 
-    @OneToOne()
-    private EnseignantDo  enseignantDo;
+	@OneToOne(mappedBy = "classe", fetch = FetchType.LAZY)
+	private EnseignantDo enseignantDo;
 
-    @OneToMany(mappedBy = "classe", fetch = FetchType.EAGER)
-    private List<EleveDo> listeDesEleves;
+	@OneToMany(mappedBy = "classe", fetch = FetchType.LAZY)
+	private List<EleveDo> listeDesEleves;
 
-    @OneToMany
-    private List<CoursDo> listeCours;
+	@OneToOne(mappedBy = "classe", fetch = FetchType.LAZY)
+	private CoursDo coursDo;
 
-    public Integer getIdClasse() {
-        return idClasse;
-    }
+	public Integer getIdClasse() {
+		return idClasse;
+	}
 
-    //Constructeur
+	// Constructeur
 
-    public void setIdClasse(final Integer idClasse) {
-        this.idClasse = idClasse;
-    }
+	public void setIdClasse(final Integer idClasse) {
+		this.idClasse = idClasse;
+	}
 
-    //Getter & Setter
+	// Getter & Setter
 
-    public String getNiveau() {
-        return niveau;
-    }
+	public String getNiveau() {
+		return niveau;
+	}
 
-    public void setNiveau(final String niveau) {
-        this.niveau = niveau;
-    }
+	public void setNiveau(final String niveau) {
+		this.niveau = niveau;
+	}
 
-    public Integer getCapaciteMin() {
-        return capaciteMin;
-    }
+	public Integer getCapaciteMin() {
+		return capaciteMin;
+	}
 
-    public void setCapaciteMin(final Integer capaciteMin) {
-        this.capaciteMin = capaciteMin;
-    }
+	public void setCapaciteMin(final Integer capaciteMin) {
+		this.capaciteMin = capaciteMin;
+	}
 
-    public Integer getCapaciteMax() {
-        return capaciteMax;
-    }
+	public Integer getCapaciteMax() {
+		return capaciteMax;
+	}
 
-    public void setCapaciteMax(final Integer capaciteMax) {
-        this.capaciteMax = capaciteMax;
-    }
+	public void setCapaciteMax(final Integer capaciteMax) {
+		this.capaciteMax = capaciteMax;
+	}
 
-    public boolean isEnable() {
-        return enable;
-    }
+	public boolean isEnable() {
+		return enable;
+	}
 
-    public void setEnable(final boolean enable) {
-        this.enable = enable;
-    }
+	public void setEnable(final boolean enable) {
+		this.enable = enable;
+	}
 
-    public UtilisateurDo getUtilisateur() {
-        return utilisateur;
-    }
+	public UtilisateurDo getUtilisateur() {
+		return utilisateur;
+	}
 
-    public void setUtilisateur(final UtilisateurDo utilisateur) {
-        this.utilisateur = utilisateur;
-    }
+	public void setUtilisateur(final UtilisateurDo utilisateur) {
+		this.utilisateur = utilisateur;
+	}
 
-    public EnseignantDo getEnseignantDo() {
-        return enseignantDo;
-    }
+	public EnseignantDo getEnseignantDo() {
+		return enseignantDo;
+	}
 
-    public void setEnseignantDo(final EnseignantDo enseignantDo) {
-        this.enseignantDo = enseignantDo;
-    }
+	public void setEnseignantDo(final EnseignantDo enseignantDo) {
+		this.enseignantDo = enseignantDo;
+	}
 
-    public List<EleveDo> getListeDesEleves() {
-        return listeDesEleves;
-    }
+	public List<EleveDo> getListeDesEleves() {
+		return listeDesEleves;
+	}
 
-    public void setListeDesEleves(final List<EleveDo> listeDesEleves) {
-        this.listeDesEleves = listeDesEleves;
-    }
+	public void setListeDesEleves(final List<EleveDo> listeDesEleves) {
+		this.listeDesEleves = listeDesEleves;
+	}
 
-    public List<CoursDo> getListeCours() {
-        return listeCours;
-    }
+	public CoursDo getCoursDo() {
+		return coursDo;
+	}
 
-    public void setListeCours(final List<CoursDo> listeCours) {
-        this.listeCours = listeCours;
-    }
+	public void setCoursDo(final CoursDo coursDo) {
+		this.coursDo = coursDo;
+	}
 
 }
