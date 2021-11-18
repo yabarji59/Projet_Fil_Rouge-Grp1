@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Enseignant } from './src/app/page/enseignant';
-import { EnseignantService } from "./services/enseignant/enseignant.service";
-import {MatDialog} from '@angular/material/dialog';
-import { FormEnseignantComponent } from './form-enseignant/form-enseignant.component';
+import { Enseignant } from 'src/app/model/enseignant.model';
+import { EnseignantService } from "src/app/services/enseignant.service";
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormEnseignantComponent } from 'src/app/form-enseignant/form-enseignant.component';
 
 @Component({
   selector: 'app-enseignant',

@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EnseignantService } from 'src/app/services/enseignant.service';
-import { Enseignant } from 'src/app/shared/model/enseignant.model';
+import { Enseignant } from 'src/app/model/enseignant.model';
 
 @Component({
   selector: 'app-form-enseignant',
