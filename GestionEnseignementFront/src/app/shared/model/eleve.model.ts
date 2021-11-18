@@ -1,4 +1,5 @@
-import { Classe } from './classe';
+import { Classe } from './classe.model';
+
 
 export interface Eleve {
   id: number;
@@ -6,6 +7,8 @@ export interface Eleve {
   prenom: string;
   classe?: Classe;
 }
+
+
 
 
 

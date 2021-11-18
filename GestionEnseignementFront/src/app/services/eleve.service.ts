@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Eleve } from '../shared/model/eleve.model';
 import { HttpClient } from '@angular/common/http';
-import { Classe } from "../shared/model/classe";
+
 export { }
 @Injectable({
   providedIn: 'root'

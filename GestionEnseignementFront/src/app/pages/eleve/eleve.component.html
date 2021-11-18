@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">Fiche élève</div>
     <div class="card-body">
-      <form [formGroup]="form" class="form-horizontal" (ngSubmit)="onSubmit()">
+      <form  class="form-horizontal" (ngSubmit)="onSubmit()">
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="form-group">
@@ -16,7 +16,7 @@
             <div class="form-group" *ngIf="form.controls.role.value === 'Eleve'">
               <label>Classe :</label>
               <select class="form-control" name="classe" formControlName="classe">
-                <option *ngFor="let classe of classes" [ngValue]="classe">{{classe}}</option>
+                <option *ngFor="let classe of classes" >{{classe}}</option>
               </select>
             </div>
             <button *ngIf="mode == 'ADD'" [disabled]="form.invalid" class="btn btn-primary">Ajouter</button>
