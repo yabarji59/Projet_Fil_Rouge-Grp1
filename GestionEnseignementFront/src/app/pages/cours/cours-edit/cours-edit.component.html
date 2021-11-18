@@ -1,0 +1,24 @@
+    <div class="modal-header">
+        <div class="titre">{{titre}}
+        </div>
+        <div class="coche" (click)="closeModal()">X</div>
+    </div>
+    <form [formGroup]="addCoursForm">
+        <div class="modal-body">
+            <div class="body-flex">
+                <div class="label">
+                    <label for="libelle">Libelle </label>
+                    <input name="libelle" class="form-control" type="text" formControlName="libelle">
+                </div>
+                <div class="label">
+                    <label for="description">Description </label>
+                    <textarea name="description" class="form-control" type="text" formControlName="description"></textarea>
+                </div>
+                <div class="action">
+                    <button *ngIf="!editForm" type="button" class="btn btn-validation" (click)="addCours()">Ajouter</button>
+                    <button *ngIf="editForm" type="button" class="btn btn-validation" (click)="updateCours()">Modifier</button>
+                    <button type="button" class="btn btn-annulation" (click)="closeModal()">Annuler</button>
+                </div>
+            </div>
+        </div>
+    </form>

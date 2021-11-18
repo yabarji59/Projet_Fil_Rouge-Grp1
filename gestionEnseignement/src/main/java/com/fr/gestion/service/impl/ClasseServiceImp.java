@@ -81,7 +81,15 @@ public class ClasseServiceImp implements IClasseService {
 		if (!classeDoOptional.isEmpty()) {
 			ClasseDo classe = classeDoOptional.get();
 			classe.setEnable(true);
+			classeDao.save(classe);
+
 		}
 
 	}
+    @Override
+    public List<ClasseDto> findAllClasseOneUser(final Integer idUtilisateur) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }

@@ -24,8 +24,9 @@ public class CoursController {
 	private ICoursService coursService;
 
 	/**
+	 * Permet de récuperer la liste des cours
 	 * 
-	 * @return
+	 * @return coursListe
 	 */
 	@GetMapping({ "/cours" })
 	public List<CoursDto> coursList() {
@@ -33,6 +34,7 @@ public class CoursController {
 	}
 
 	/**
+	 * Permet de supprimer un cours
 	 * 
 	 * @param id
 	 */
@@ -42,21 +44,35 @@ public class CoursController {
 	}
 
 	/**
+	 * Permet de récupérer un cours à partir de son id
 	 * 
-	 * @param id
-	 * @return
+	 *  * @param id
+	 * @return coursDto
 	 */
 	@GetMapping({ "/cours/{id}" })
 	public CoursDto findById(@PathVariable int id) {
 		final CoursDto coursDto =coursService.findByIdCours(id);
 		return coursDto;
 	}
+	
+	/**
+	 * Permet de créer un cours
+	 * 
+	 *  * @param cours
+	 */
 
 	@PostMapping({ "/cours" })
 	public void save(@RequestBody CoursDto cours) {
 		this.coursService.createCours(cours);
 
 	}
+	
+	/**
+	 * Permet de modifier un cours 
+	 * 
+	 * 
+	 * @param cours
+	 */
 
 	@PutMapping({ "/cours" })
 	public void update(@RequestBody CoursDto cours) {
