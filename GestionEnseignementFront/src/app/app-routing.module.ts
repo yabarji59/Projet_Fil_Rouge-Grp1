@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
 import { CoursComponent } from './pages/cours/cours.component';
 import { AuthComponent } from './pages/auth/auth.component';
-import { EleveComponent } from './pages/eleve/eleve.component';
-import { FormEleveComponent } from './pages/form-eleve/form-eleve.component';
 
 
 const routes: Routes = [
@@ -15,11 +13,6 @@ const routes: Routes = [
       path: 'Accueil',
       component: PageAccueilComponent,
   },
-  // component " eleve" 
-  { path: 'eleve', component:EleveComponent  },
-  // 2ème route 
-  // component " user-details "
-  {path:'form-eleve/:id', component:FormEleveComponent},
   {
     path: 'Cours',
     component: CoursComponent
@@ -36,4 +29,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
