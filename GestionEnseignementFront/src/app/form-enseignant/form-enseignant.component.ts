@@ -54,7 +54,7 @@ export class FormEnseignantComponent implements OnInit {
     this.matDialog.closeAll();
   }
 
-  addEleve(){
+  addEnseignant(){
     let enseignant= new Enseignant();
     enseignant.nom = this.addEnseignantForm.get('nom')?.value;
     enseignant.prenom = this.addEnseignantForm.get('prenom')?.value;

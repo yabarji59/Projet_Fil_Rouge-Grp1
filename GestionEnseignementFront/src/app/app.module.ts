@@ -21,6 +21,9 @@ const appRoutes: Routes = [
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes } from '@angular/router';
+import { CoursService } from './services/cours.service';
+import { CoursComponent } from './pages/cours/cours.component';
+import { CoursEditComponent } from './pages/cours/cours-edit/cours-edit.component';
 
 
 
@@ -35,7 +38,6 @@ import { Routes } from '@angular/router';
     FormEleveComponent,
     CoursComponent,
     CoursEditComponent,
-    ClassePipe,
     EnseignantComponent,
     FormEnseignantComponent
   ],
