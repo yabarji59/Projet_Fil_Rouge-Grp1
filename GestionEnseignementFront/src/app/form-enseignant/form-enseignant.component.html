@@ -1,0 +1,78 @@
+<div>
+    <div class="row modal-title" mat-dialog-title>
+        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="margin-left: 10px;margin-top: 10px;">{{titre}}
+        </div>
+        <div class="col-xs-push-right col-sm-push-right col-md-push-right col-lg-push-right close"
+            (click)="closeModal()">X</div>
+    </div>
+  </div>
+  <div class="form my-5 mx-2">
+      
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-5 px-7">
+          <img src="img/pat.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-7 px-5 pt-5">
+         
+          <h4>Gestion enseignants</h4>
+          <form>
+
+            <div class="form-row">
+                <div class="col-lg-7">
+                  <input type="nom" placeholder="nom" class="form-control my-3 p-4">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-lg-7">
+                  <input type="prenom" placeholder="prenom" class="form-control my-3 p-4">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-lg-7">
+                  <input type="age" placeholder="âge" class="form-control my-3 p-4">
+                </div>
+              </div>
+
+            <div class="form-row">
+                <div class="col-lg-7">
+                  <input type="telephone"  placeholder="Téléphone" class="form-control my-3 p-4">
+                </div>
+              </div>
+
+   
+
+            <div class="form-row">
+              <div class="col-lg-7">
+                <input type="email" placeholder="Email" class="form-control my-3 p-4">
+              </div>
+
+            </div>
+
+
+            <div class="form-row">
+              <div class="col-lg-7">
+                <input type="Adresse" placeholder="Adresse" class="form-control  my-3 p-4">
+              </div>
+
+            </div>
+
+  
+              <div class="form-row">
+                <div class="col-lg-3">
+                <button *ngIf="editForm"  type="button" class="btn1 mt-3 mb-5"(click)="addEnseignant(id.enseignant)">Valider</button>   
+                </div>
+               
+                <div class="form-row">
+                  <div class="col-lg-7">
+                  <button *ngIf="editForm" type="button" class="btn1 mt-3 mb-5"(click)="deleteEnseignant(id.enseignant)">Supprimer</button>   
+                  </div>
+  
+  
+          </div>
+  
+        </div>
+  
+  </div>
