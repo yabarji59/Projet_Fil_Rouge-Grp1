@@ -1,0 +1,28 @@
+<app-bannette></app-bannette>
+<section class="liste des classe">
+    <div class="row my-5 pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-3">
+                    <h2>Les enseignants</h2>
+                </div>
+                <div class="col-12 text-center mb-4">
+                    <span>
+                        <i class="fas fa-plus-circle fa-2x" id="i-button-add" (click)="openAddEnseignant()"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div *ngFor="let enseignant of enseignantList" class="col-auto text-center py-3" style="min-width:150px">
+                    <i class="fa fa-times fa-1x supp" aria-hidden="true" (click)="openDeleteEnseignant(enseignant)"></i>
+                    <a class="rounded btn btn-lg px-5 py-4 text-white" style="background-color:#89ae2a"
+                        (click)="openUpdateEnseignant(enseignant)">
+                        {{enseignant.nomEnseignant}}
+                        <!-- {{enseignant.prenomEnseignant}}{{enseignant.emailEnseignant}}{{enseignant.telephoneEnseignant}}
+                        {{enseignant.ageEnseignant}}{{enseignant.adresseEnseignant}} -->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

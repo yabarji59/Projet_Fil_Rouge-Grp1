@@ -1,0 +1,48 @@
+    <div class="modal-header">
+        <div class="titre">{{titre}}
+        </div>
+        <div class="coche" (click)="closeModal()">X</div>
+    </div>
+    <form [formGroup]="addEnseignantForm">
+        <div class="modal-body">
+            <div class="body-flex">
+
+                <div class="label">
+                    <label for="nom">Nom </label>
+                    <input name="nom" class="form-control" type="text" formControlName="nom">
+                </div>
+
+                <div class="label">
+                    <label for="prenom">Prénom </label>
+                    <input name="prenom" class="form-control" type="text" formControlName="prenom">
+                </div>
+
+                <div class="label">
+                    <label for="email">Email </label>
+                    <input name="email" class="form-control" type="text" formControlName="email">
+                </div>
+
+                <div class="label">
+                    <label for="telephone"> Téléphone</label>
+                    <input name="telephone" class="form-control" type="text" formControlName="telephone">
+                </div>
+
+
+                <div class="label">
+                    <label for="age">Age </label>
+                    <input name="age" class="form-control" type="text" formControlName="age">
+                </div>
+
+                <div class="label">
+                    <label for="adresse">Adresse </label>
+                    <input name="adresse" class="form-control" type="text" formControlName="adresse">
+                </div>
+
+                <div class="action">
+                    <button *ngIf="!editForm" type="button" class="btn btn-validation" (click)="addEnseignant()">Ajouter</button>
+                    <button *ngIf="editForm" type="button" class="btn btn-validation" (click)="updateEnseignant()">Modifier</button>
+                    <button type="button" class="btn btn-annulation" (click)="closeModal()">Annuler</button>
+                </div>
+            </div>
+        </div>
+    </form>

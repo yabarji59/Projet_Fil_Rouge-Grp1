@@ -4,6 +4,7 @@ import { PageAccueilComponent } from './pages/page-accueil/page-accueil.componen
 import { CoursComponent } from './pages/cours/cours.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { EleveComponent } from './pages/eleve/eleve.component';
+import { EnseignantComponent } from './pages/enseignant/enseignant.component';
 
 
 
@@ -23,6 +24,10 @@ const routes: Routes = [
   path: 'Eleve',
   component: EleveComponent
 },
+{
+  path: 'Enseignant',
+  component: EnseignantComponent
+},
 
   { path: 'auth', component: AuthComponent }
 
@@ -34,8 +39,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-<<<<<<< HEAD
 export class AppRoutingModule { }
-=======
-export class AppRoutingModule { }
->>>>>>> a06d6df34bf0c29eb2c289c42123cb1deb85e446
