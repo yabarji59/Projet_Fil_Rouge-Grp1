@@ -8,7 +8,6 @@ INSERT INTO public.classes(id_classe,capacite_max,capacite_min,enable,niveau,id_
 INSERT INTO public.classes(id_classe,capacite_max,capacite_min,enable,niveau,id_utilisateur) VALUES ((select nextval('classe_id_classe_seq')),20,10,true,'CM1',null);
 INSERT INTO public.classes(id_classe,capacite_max,capacite_min,enable,niveau,id_utilisateur) VALUES ((select nextval('classe_id_classe_seq')),20,10,true,'CM2',null);
 
-
 ALTER SEQUENCE cours_id_cours_seq RESTART WITH 1;
 --INSERT INTO public.cours(id_cours, description, libelle, classe_id_classe) VALUES(0, '', '', 0);
 INSERT INTO public.cours(id_cours,description,libelle, classe_id_classe) VALUES ((select nextval('cours_id_cours_seq')),'Les horaires d''enseignement à l''école élémentaire sont répartis par matière. Ils dépendent du cycle dans lequel se trouve l''enfant. La semaine scolaire ne peut pas dépasser 24 heures d''enseignement. L''année scolaire comporte 36 semaines d''école.','Programme CP',1);
