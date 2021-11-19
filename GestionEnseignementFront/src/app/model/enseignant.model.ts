@@ -9,6 +9,12 @@ export interface Enseignant{
 }
 
 export class Enseignant{
+    nom: any;
+  prenom: any;
+  age: any;
+  telephone: any;
+  email: any;
+  adresse: any;
     constructor(){
         
     }

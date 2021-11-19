@@ -56,19 +56,19 @@ export class FormEnseignantComponent implements OnInit {
 
   addEnseignant(){
     let enseignant= new Enseignant();
-    enseignant.nom = this.addEnseignantForm.get('nom')?.value;
-    enseignant.prenom = this.addEnseignantForm.get('prenom')?.value;
-    enseignant.age = this.addEnseignantForm.get('age')?.value;
-    enseignant.telephone = this.addEnseignantForm.get('telephone')?.value;
-    enseignant.email= this.addEnseignantForm.get('email')?.value;
-    enseignant.adresse = this.addEnseignantForm.get('adresse')?.value;
+    enseignant.nomEnseignant = this.addEnseignantForm.get('nomEnseignant')?.value;
+    enseignant.prenomEnseignant = this.addEnseignantForm.get('prenomEnseignant')?.value;
+    enseignant.ageEnseignant = this.addEnseignantForm.get('ageEnseignant')?.value;
+    enseignant.telephoneEnseignant = this.addEnseignantForm.get('telephoneEnseignant')?.value;
+    enseignant.emailEnseignant = this.addEnseignantForm.get('emailEnseignant')?.value;
+    enseignant.adresseEnseignant = this.addEnseignantForm.get('adresseEnseignant')?.value;
     this.enseignantService.createEnseignant(enseignant).subscribe(
         (      result: any) => {this.matDialog.closeAll();}
     ,(errors: any) =>{});
   }
 
   updateEnseignant(){
-    this.enseignantGet.nom = this.addEnseignantForm.get('nom')?.value;
+    this.enseignantGet.nomEnseignant = this.addEnseignantForm.get('nomEnseignant')?.value;
     this.enseignantService.updateEnseignant(this.enseignantGet).subscribe(
         (      result: any) => {this.matDialog.closeAll();}
     ,(errors: any) =>{});

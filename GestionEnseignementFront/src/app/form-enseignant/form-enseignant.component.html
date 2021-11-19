@@ -6,6 +6,7 @@
             (click)="closeModal()">X</div>
     </div>
   </div>
+  <form [formGroup]="addEnseignantForm">
   <div class="form my-5 mx-2">
       
     <div class="container">
@@ -20,25 +21,29 @@
 
             <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="nom" placeholder="nom" class="form-control my-3 p-4">
+                  <label for="nom"> nom </label>
+                  <input type="nom" class="form-control my-3 p-4" name="nom" formControlName="nom">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="prenom" placeholder="prenom" class="form-control my-3 p-4">
+                  <label for="prenom"> prenom </label>
+                  <input type="prenom" class="form-control my-3 p-4" name="prenom" formControlName="prenom">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="age" placeholder="âge" class="form-control my-3 p-4">
+                  <label for="age"> age </label>
+                  <input type="age" class="form-control my-3 p-4" name="age" formControlName="age">
                 </div>
               </div>
 
             <div class="form-row">
                 <div class="col-lg-7">
-                  <input type="telephone"  placeholder="Téléphone" class="form-control my-3 p-4">
+                  <label for="telephone"> telephone </label>
+                  <input type="telephone" class="form-control my-3 p-4" name="telephone" formControlName="telephone">
                 </div>
               </div>
 
@@ -46,7 +51,8 @@
 
             <div class="form-row">
               <div class="col-lg-7">
-                <input type="email" placeholder="Email" class="form-control my-3 p-4">
+                <label for="email"> email </label>
+                <input type="email" class="form-control my-3 p-4" name="email" formControlName="email">
               </div>
 
             </div>
@@ -54,25 +60,27 @@
 
             <div class="form-row">
               <div class="col-lg-7">
-                <input type="Adresse" placeholder="Adresse" class="form-control  my-3 p-4">
+                <label for="adresse"> adresse </label>
+                <input type="Adresse" class="form-control  my-3 p-4" name="adresse" formControlName="adresse">
               </div>
 
             </div>
 
-  
+            <div class="action">
               <div class="form-row">
                 <div class="col-lg-3">
-                <button *ngIf="editForm"  type="button" class="btn1 mt-3 mb-5"(click)="addEnseignant(id.enseignant)">Valider</button>   
+                <button *ngIf="editForm"  type="button" class="btn btn-validation mt-3 mb-5"(click)="addEnseignant()">Valider</button>   
                 </div>
                
                 <div class="form-row">
                   <div class="col-lg-7">
-                  <button *ngIf="editForm" type="button" class="btn1 mt-3 mb-5"(click)="deleteEnseignant(id.enseignant)">Supprimer</button>   
+                    <button type="button" class="btn btn-annulation" (click)="closeModal()">Annuler</button>  
                   </div>
   
   
           </div>
-  
+        </div>
         </div>
   
   </div>
+ </form>
