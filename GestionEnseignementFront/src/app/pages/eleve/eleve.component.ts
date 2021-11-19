@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Eleve} from 'src/app/shared/model/eleve.model';
-import { EleveService } from '../../services/eleve.service';
-
+import { EleveService } from 'src/app/services/eleve.service';
+import { Eleve } from 'src/app/shared/model/eleve.model';
+import {MatDialog} from '@angular/material/dialog';
+import { EleveEditComponent } from './eleve-edit/eleve-edit.component';
+import { EleveDeleteComponent } from './eleve-delete/eleve-delete.component';
 
 @Component({
   selector: 'app-eleve',
@@ -10,52 +11,49 @@ import { EleveService } from '../../services/eleve.service';
   styleUrls: ['./eleve.component.css']
 })
 export class EleveComponent implements OnInit {
+  eleveList: Eleve[] = [];
+  constructor(private eleveService: EleveService, private matDialog: MatDialog) { }
 
-  form: FormGroup;
-  classes = ['L1', 'L2', 'L3', 'M1', 'M2'];
-  mode: 'ADD' | 'EDIT';
-
-  constructor(fb: FormBuilder, private readonly eleveService: EleveService) {
-    this.form = fb.group({
-      nom: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-      prenom: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-      classe: [null]
-    });
-
-    this.form.controls.role.valueChanges.subscribe(role => {
-      const classeControl = this.form.controls.classe;
-      classeControl.clearValidators();
-
-      if (role === 'E') {
-        classeControl.setValidators(Validators.required);
-      } else if (role === 'I') {
-        classeControl.setValue(null);
-      }
-
-      classeControl.updateValueAndValidity();
-    });
-
-    this.mode = 'ADD';
-
-    this.eleveService.onEdit.subscribe((eleve: Eleve) => {
-      this.mode = 'EDIT';
-      this.form.patchValue(eleve);
-    });
-  }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.eleveService.getEleve().subscribe(data =>{       
+      console.log(data);
+      this.eleveList= data;
+    })
   }
-
-  onSubmit() {
-    const eleve = this.form.value as Eleve;
-
-    if (this.mode == 'ADD') {
-      this.eleveService.addEleve(eleve);
-    } else if (this.mode == 'EDIT') {
-      this.eleveService.finishEditEleve(eleve);
-    }
-
-    this.mode = 'ADD';
-    this.form.reset();
+  openAddEleve() {
+    const modal = this.matDialog.open(EleveEditComponent,
+      {
+        panelClass: 'custom-dialog-container',
+        disableClose: true,
+        data: { eleve: null, modalType: 'add' }
+      });
+    modal.afterClosed().subscribe(() => this.eleveService.getEleve().subscribe(data =>{       
+      console.log(data);
+      this.eleveList= data;
+    }));
+  }
+  openUpdateEleve(eleve: Eleve) {
+    const modal = this.matDialog.open(EleveEditComponent,
+      {
+        panelClass: 'custom-dialog-container',
+        disableClose: true,
+        data: { eleve: eleve, modalType: 'edit' }
+      });
+    modal.afterClosed().subscribe(() => this.eleveService.getEleve().subscribe(data =>{       
+      console.log(data);
+      this.eleveList= data;
+    }));
+  }
+  openDeleteEleve(eleve: Eleve){
+    const modal = this.matDialog.open(EleveDeleteComponent,
+      {
+        panelClass: 'custom-dialog-container',
+        disableClose: true,
+        data: { eleve: eleve, modalType: 'delete' }
+      });
+    modal.afterClosed().subscribe(() => this.eleveService.getEleve().subscribe(data =>{       
+      console.log(data);
+      this.eleveList= data;
+    }));
   }
 }

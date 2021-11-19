@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <div class="titre">Supprimer un eleve
+    </div>
+    <div class="coche" (click)="closeModal()">X</div>
+</div>
+    <div class="modal-body">
+        <div class="body-flex">
+            <div class="label">
+                <label for="nom">Voulez-vous supprimer ce eleve ?</label>
+            </div>
+            <div class="action">
+                <button type="button" class="btn btn-validation" (click)="deleteEleve()">Supprimer</button>
+                <button type="button" class="btn btn-annulation" (click)="closeModal()">Annuler</button>
+            </div>
+        </div>
+    </div>

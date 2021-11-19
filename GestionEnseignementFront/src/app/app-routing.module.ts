@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
 import { CoursComponent } from './pages/cours/cours.component';
 import { AuthComponent } from './pages/auth/auth.component';
-import { FormEleveComponent } from './pages/form-eleve/form-eleve.component';
 import { EleveComponent } from './pages/eleve/eleve.component';
+
 
 
 const routes: Routes = [
@@ -23,11 +23,7 @@ const routes: Routes = [
   path: 'Eleve',
   component: EleveComponent
 },
-{
-  path: 'Form-eleve',
-  component: FormEleveComponent
-},
-  { path: '**', component: PageAccueilComponent },
+
   { path: 'auth', component: AuthComponent }
 
 ];

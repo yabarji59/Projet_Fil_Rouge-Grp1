@@ -18,9 +18,11 @@ import { CoursEditComponent } from './pages/cours/cours-edit/cours-edit.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoursDeleteComponent } from './pages/cours/cours-delete/cours-delete.component';
 import { BannetteComponent } from './shared/banette/bannette/bannette.component';
-import { FormEleveComponent } from './pages/form-eleve/form-eleve.component';
+import { EleveDeleteComponent } from './pages/eleve/eleve-delete/eleve-delete.component';
+import { EleveEditComponent } from './pages/eleve/eleve-edit/eleve-edit.component';
 import { EleveComponent } from './pages/eleve/eleve.component';
 import { EleveService } from './services/eleve.service';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,10 @@ import { EleveService } from './services/eleve.service';
     CoursDeleteComponent,
     BannetteComponent,
     EleveComponent,
-    FormEleveComponent,
+    EleveEditComponent,
+    EleveDeleteComponent
+
+  
     
   ],
   imports: [
@@ -52,6 +57,8 @@ import { EleveService } from './services/eleve.service';
     AuthService,
     CoursService,
     EleveService,
+    
+  
     
   ],
   bootstrap: [AppComponent]
