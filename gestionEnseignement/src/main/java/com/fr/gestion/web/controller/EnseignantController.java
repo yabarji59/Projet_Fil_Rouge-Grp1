@@ -23,6 +23,14 @@ public class EnseignantController {
 
 	@Autowired
 	private IEnseignantService enseignantService;
+	
+	
+	
+	@GetMapping({ "/enseignant/isAvailable" })
+	public List<EnseignantDto> ListEnseignantAvailable() {
+		return enseignantService.findAllEnseignantByAvailable();
+		
+	}
 
 	/**
 	 * Permet de retouner la liste de tous les enseignants
@@ -76,5 +84,8 @@ public class EnseignantController {
 		this.enseignantService.deleteEnseignant(id);
 
 	}
-
+	
+	
+	
+	
 }

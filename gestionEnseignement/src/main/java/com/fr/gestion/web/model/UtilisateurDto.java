@@ -1,5 +1,7 @@
 package com.fr.gestion.web.model;
 
+import java.util.List;
+
 /**
  * Classe UtilisateurDto
  * 
@@ -14,6 +16,12 @@ public class UtilisateurDto {
 	private String emailUtilisateur;
 	private String passwordUtilisateur;
 	private String tokenSecret;
+<<<<<<< HEAD
+	private List<String> roles;
+
+	private List<ClasseDto> listeDesClasses;
+=======
+>>>>>>> 613daa066f61b22c0488b660f2b5f2fc20caef31
 
 	public UtilisateurDto() {
 		// Empty method
@@ -66,5 +74,24 @@ public class UtilisateurDto {
 	public void setTokenSecret(final String tokenSecret) {
 		this.tokenSecret = tokenSecret;
 	}
+<<<<<<< HEAD
+
+	public List<ClasseDto> getListeDesClasses() {
+		return listeDesClasses;
+	}
+
+	public void setListeDesClasses(final List<ClasseDto> listeDesClasses) {
+		this.listeDesClasses = listeDesClasses;
+	}
+
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
+	}
+=======
+>>>>>>> 613daa066f61b22c0488b660f2b5f2fc20caef31
 
 }

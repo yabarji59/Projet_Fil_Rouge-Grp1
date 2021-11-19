@@ -1,5 +1,10 @@
 package com.fr.gestion.web.model;
 
+<<<<<<< HEAD
+import java.util.List;
+
+=======
+>>>>>>> 613daa066f61b22c0488b660f2b5f2fc20caef31
 /**
  * Classe ClasseDto
  * 
@@ -14,6 +19,14 @@ public class ClasseDto {
 	private Integer capaciteMax;
 	private boolean enable;
 
+<<<<<<< HEAD
+	private UtilisateurDto utilisateur;
+	private EnseignantDto enseignantDo;
+	private List<EleveDto> listeDesEleves;
+	private List<CoursDto> listeCours;
+
+=======
+>>>>>>> 613daa066f61b22c0488b660f2b5f2fc20caef31
 	public ClasseDto() {
 		// Empty method
 	}
@@ -56,6 +69,41 @@ public class ClasseDto {
 
 	public void setEnable(final boolean enable) {
 		this.enable = enable;
+<<<<<<< HEAD
+	}
+
+	public UtilisateurDto getUtilisateur() {
+		return utilisateur;
+	}
+
+	public void setUtilisateur(UtilisateurDto utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
+	public EnseignantDto getEnseignantDo() {
+		return enseignantDo;
+	}
+
+	public void setEnseignantDo(EnseignantDto enseignantDo) {
+		this.enseignantDo = enseignantDo;
+	}
+
+	public List<EleveDto> getListeDesEleves() {
+		return listeDesEleves;
+	}
+
+	public void setListeDesEleves(List<EleveDto> listeDesEleves) {
+		this.listeDesEleves = listeDesEleves;
+	}
+
+	public List<CoursDto> getListeCours() {
+		return listeCours;
+	}
+
+	public void setListeCours(List<CoursDto> listeCours) {
+		this.listeCours = listeCours;
+=======
+>>>>>>> 613daa066f61b22c0488b660f2b5f2fc20caef31
 	}
 
 }

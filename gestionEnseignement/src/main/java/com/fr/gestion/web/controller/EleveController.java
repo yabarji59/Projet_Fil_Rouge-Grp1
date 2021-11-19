@@ -24,6 +24,13 @@ public class EleveController {
 
 	@Autowired
 	private IEleveService eleveService;
+	
+	
+	@GetMapping({ "/eleve/isAvailable" })
+	public List<EleveDto> ListEleveAvailable() {
+		return eleveService.findAllEleveByAvailable();
+		
+	}
 
 	@GetMapping("/eleves")
 	public List<EleveDto> listEleve() {

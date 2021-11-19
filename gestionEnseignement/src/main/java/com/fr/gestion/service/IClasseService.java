@@ -2,7 +2,6 @@ package com.fr.gestion.service;
 
 import java.util.List;
 
-import com.fr.gestion.persistence.entities.ClasseDo;
 import com.fr.gestion.web.model.ClasseDto;
 
 

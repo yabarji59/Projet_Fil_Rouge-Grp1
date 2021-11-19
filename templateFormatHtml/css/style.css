@@ -21,7 +21,7 @@ header {
 /* PRESENTATION */
 #presentation {
 
-  /* background-image: url("../img/istockphoto-1159644956-612x612.jpg"); */
+  background-image: url("../img/istockphoto-1159644956-612x612.jpg");
  
 height:410px;
 }
@@ -121,3 +121,8 @@ nav{
   top: 0;
   width: 100%;
 }
+
+
+
+
+
