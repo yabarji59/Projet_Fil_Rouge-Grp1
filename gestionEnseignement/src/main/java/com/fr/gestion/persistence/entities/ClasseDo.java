@@ -45,9 +45,14 @@ public class ClasseDo {
 	@OneToOne(mappedBy = "classe", fetch = FetchType.LAZY)
 	private EnseignantDo enseignantDo;
 
+<<<<<<< HEAD
     @OneToMany(mappedBy = "classe", fetch = FetchType.EAGER)
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<EleveDo> listeDesEleves;
+=======
+	@OneToMany(mappedBy = "classe", fetch = FetchType.LAZY)
+	private List<EleveDo> listeDesEleves;
+>>>>>>> 613daa066f61b22c0488b660f2b5f2fc20caef31
 
 	@OneToOne(mappedBy = "classe", fetch = FetchType.LAZY)
 	private CoursDo coursDo;
