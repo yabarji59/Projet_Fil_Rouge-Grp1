@@ -81,6 +81,8 @@ public class ClasseServiceImp implements IClasseService {
 		if (!classeDoOptional.isEmpty()) {
 			ClasseDo classe = classeDoOptional.get();
 			classe.setEnable(true);
+			classeDao.save(classe);
+
 		}
 
 	}

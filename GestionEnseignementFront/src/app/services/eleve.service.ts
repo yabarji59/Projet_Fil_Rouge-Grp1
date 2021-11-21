@@ -9,7 +9,7 @@ export { }
 export class EleveService {
   private eleve: Eleve[] = [];
   public onEdit = new EventEmitter<Eleve>();
-  //url_eleve = 'http://localhost:8080/api/eleve/'
+  url_eleve = 'http://localhost:8080/api/eleves/'
 
   constructor(private http: HttpClient) { }
 

@@ -16,9 +16,12 @@ public class UtilisateurDto {
 	private String emailUtilisateur;
 	private String passwordUtilisateur;
 	private String tokenSecret;
+<<<<<<< HEAD
 	private List<String> roles;
 
 	private List<ClasseDto> listeDesClasses;
+=======
+>>>>>>> e95f77e3aa949938ecb153320153099c896e0125
 
 	public UtilisateurDto() {
 		// Empty method
@@ -71,6 +74,7 @@ public class UtilisateurDto {
 	public void setTokenSecret(final String tokenSecret) {
 		this.tokenSecret = tokenSecret;
 	}
+<<<<<<< HEAD
 
 	public List<ClasseDto> getListeDesClasses() {
 		return listeDesClasses;
@@ -87,5 +91,7 @@ public class UtilisateurDto {
 	public void setRoles(List<String> roles) {
 		this.roles = roles;
 	}
+=======
+>>>>>>> e95f77e3aa949938ecb153320153099c896e0125
 
 }

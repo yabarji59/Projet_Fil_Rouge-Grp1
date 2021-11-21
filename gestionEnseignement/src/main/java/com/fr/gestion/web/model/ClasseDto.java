@@ -1,7 +1,10 @@
 package com.fr.gestion.web.model;
 
+<<<<<<< HEAD
 import java.util.List;
 
+=======
+>>>>>>> e95f77e3aa949938ecb153320153099c896e0125
 /**
  * Classe ClasseDto
  * 
@@ -16,11 +19,14 @@ public class ClasseDto {
 	private Integer capaciteMax;
 	private boolean enable;
 
+<<<<<<< HEAD
 	private UtilisateurDto utilisateur;
 	private EnseignantDto enseignantDo;
 	private List<EleveDto> listeDesEleves;
 	private List<CoursDto> listeCours;
 
+=======
+>>>>>>> e95f77e3aa949938ecb153320153099c896e0125
 	public ClasseDto() {
 		// Empty method
 	}
@@ -63,6 +69,7 @@ public class ClasseDto {
 
 	public void setEnable(final boolean enable) {
 		this.enable = enable;
+<<<<<<< HEAD
 	}
 
 	public UtilisateurDto getUtilisateur() {
@@ -95,6 +102,8 @@ public class ClasseDto {
 
 	public void setListeCours(List<CoursDto> listeCours) {
 		this.listeCours = listeCours;
+=======
+>>>>>>> e95f77e3aa949938ecb153320153099c896e0125
 	}
 
 }
