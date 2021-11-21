@@ -1,11 +1,10 @@
-export interface Eleve{
+export interface Cours{
     idCours : number;
     libelle : string;
     description: string;
 }
 
 export class Cours{
-    libelle: any;
     constructor(){
         
     }

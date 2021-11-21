@@ -1,48 +1,96 @@
-    <div class="modal-header">
-        <div class="titre">{{titre}}
-        </div>
-        <div class="coche" (click)="closeModal()">X</div>
-    </div>
-    <form [formGroup]="addEleveForm">
-        <div class="modal-body">
-            <div class="body-flex">
-
-                <div class="label">
-                    <label for="nom">Nom </label>
-                    <input name="nom" class="form-control" type="text" formControlName="nom">
-                </div>
-
-                <div class="label">
-                    <label for="prenom">Prénom </label>
-                    <input name="prenom" class="form-control" type="text" formControlName="prenom">
-                </div>
-
-                <div class="label">
-                    <label for="email">Email </label>
-                    <input name="email" class="form-control" type="text" formControlName="email">
-                </div>
-
-                <div class="label">
-                    <label for="telephone"> Téléphone</label>
-                    <input name="telephone" class="form-control" type="text" formControlName="telephone">
-                </div>
+<section class="formulaire">
+<div class="modal-header">
+    <div class="titre">{{titre}}</div>
+    <div class="coche" (click)="closeModal()">X</div>
+</div>
 
 
-                <div class="label">
-                    <label for="age">Age </label>
-                    <input name="age" class="form-control" type="text" formControlName="age">
-                </div>
+<div class=" ">
 
-                <div class="label">
-                    <label for="adresse">Adresse </label>
-                    <input name="adresse" class="form-control" type="text" formControlName="adresse">
-                </div>
+    <div class="container">
+        <div class="row no-gutters">
 
-                <div class="action">
-                    <button *ngIf="!editForm" type="button" class="btn btn-validation" (click)="addEleve()">Ajouter</button>
-                    <button *ngIf="editForm" type="button" class="btn btn-validation" (click)="updateEleve()">Modifier</button>
-                    <button type="button" class="btn btn-annulation" (click)="closeModal()">Annuler</button>
-                </div>
+            <div class="col-lg-5 px-7">
+                <img src="../../../assets/img/ELEV11.jpg" class="img-fluid" >
             </div>
+
+            <div class="col-lg-7 px-5 pt-5">
+
+
+                <form [formGroup]="addEleveForm">
+                    
+                    
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input for="nom" name="nom" class="form-control my-3 p-4" type="text" formControlName="nom">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input name="prenom" class="form-control my-3 p-4" type="text" formControlName="prenom">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input name="age" class="form-control my-3 p-4" type="text" formControlName="age">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input name="telephone" class="form-control my-3 p-4" type="text"
+                                formControlName="telephone">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input name="email" class="form-control my-3 p-4" type="text" formControlName="email">
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input name="adresse" class="form-control my-3 p-4" type="text" formControlName="adresse">
+                        </div>
+
+                    </div>
+
+                    
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">Classe</label>
+                        <select class="form-select" id="inputGroupSelect01">
+                            <option value="1">CP</option>
+                            <option value="2">CE1</option>
+                            <option value="3">CE2</option>
+                            <option value="3">CM1</option>
+                            <option value="3">CM2</option>
+                        </select>
+                      
+                    </div>
+               
+                    <div class="form-col">
+                        
+                            <button *ngIf="!editForm" type="button" class="btn btn-validation mt-3 mb-5"(click)="addEleve()">Valider</button>
+                            &nbsp;
+                            <button *ngIf="!editForm" type="button" class="btn btn-validation mt-3 mb-5"(click)="updateEleve()">Modifier</button>
+                      
+                    </div>
+
+    
+
+                </form>
+
+            </div>
+
         </div>
-    </form>
+    </div>
+
+</div>
+</section>

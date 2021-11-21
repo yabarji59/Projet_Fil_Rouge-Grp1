@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class EleveService {
-  url_eleve = 'http://localhost:8080/api/eleve/'
+  url_eleve = 'http://localhost:8080/api/eleves/'
 
   constructor(private http: HttpClient) { }
 

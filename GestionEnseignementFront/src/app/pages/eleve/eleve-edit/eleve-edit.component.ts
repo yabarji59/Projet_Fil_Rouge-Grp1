@@ -19,7 +19,8 @@ export class EleveEditComponent implements OnInit {
     private eleveService: EleveService,
     private matDialog: MatDialog,
     public formBuilder: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public dialogData: any) {
+    @Inject(MAT_DIALOG_DATA) 
+    public dialogData: any) {
       this.addEleveForm = this.formBuilder.group({
         nomEleve: ['', Validators.maxLength(1000)],
         prenomEleve: ['', Validators.maxLength(1000)],

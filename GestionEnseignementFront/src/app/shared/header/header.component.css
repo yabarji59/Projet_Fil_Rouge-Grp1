@@ -1,0 +1,86 @@
+/* nav bar */
+
+li {
+    display: inline;
+   
+  }
+  
+  
+  a {
+    display: block;
+    padding: 8px;   
+    background:linear-gradient(to top, #09e0bd, rgb(0, 162, 255));
+ 
+    
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    overflow: hidden;
+    background-color: #f0229a;
+   
+  }
+  
+  
+  li a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 40px;
+   font-size:small;
+   
+  }
+  
+  /* Changer la couleur pour cliquer*/
+  li a:hover {
+   background:linear-gradient(to top, rgb(101, 197, 204), rgb(172, 50, 152));
+   text-decoration-line: none;
+   color:white;
+  
+  }
+  .active {
+    background-color: #1258ee;
+   
+  }
+  ul {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+  }
+  .navbar{
+    
+    background-color: #f0229a;
+    position: fixed;
+    padding: 0px;
+    top: 0;
+    width: 100%;
+    background-size: cover;
+  }
+  
+/* à partir de la tablette  */
+@media screen and (min-width: 768px) {
+    .accueil {
+        display:block;
+    }
+
+    .accueil {
+        padding: 0;
+    }
+}
+
+/* uniquement pour la tablette */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .accueil {
+        flex-wrap: wrap;
+    }
+
+    .accueil {
+        flex-basis: 50%;
+    }
+}
+
+  

@@ -1,28 +1,29 @@
-<app-bannette></app-bannette>
-<section class="liste des classe">
-    <div class="row my-5 pt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-3">
-                    <h2>Les eleves</h2>
+<section class="eleve">
+
+<div class="col-12 text-center mb-3">
+    <h2>Les eleves</h2>
+</div>
+<span>
+    <i class="fas fa-plus-circle fa-2x text-center" id="i-button-add" (click)="openAddEleve()"></i>
+</span>
+ <div class="row   my-5 pt-5">
+   
+            <div  *ngFor="let eleve of eleveList" class="card" style="width: 18rem; margin: 30px;">
+           
+                <img class="card-img-top" src="./../../../assets/img/el2.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"> {{eleve.nomEleve}}{{eleve.prenomEleve}}</h5>
+                  <p class="card-text">Je m'appelle {{eleve.prenomEleve}}. J'ai  {{eleve.ageEleve}} et j'habite à {{eleve.adresseEleve}}</p>
+                  
+                  <a   class="btn btn-primary " (click)="openUpdateEleve(eleve)">Modifier</a>
+                  &nbsp;
+                  <a   class="btn btn-primary" (click)="openDeleteEleve(eleve)">Supprimer</a>
+                
                 </div>
-                <div class="col-12 text-center mb-4">
-                    <span>
-                        <i class="fas fa-plus-circle fa-2x" id="i-button-add" (click)="openAddEleve()"></i>
-                    </span>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div *ngFor="let eleve of eleveList" class="col-auto text-center py-3" style="min-width:150px">
-                    <i class="fa fa-times fa-1x supp" aria-hidden="true" (click)="openDeleteEleve(eleve)"></i>
-                    <a class="rounded btn btn-lg px-5 py-4 text-white" style="background-color:#89ae2a"
-                        (click)="openUpdateEleve(eleve)">
-                        {{eleve.nomEleve}}
-                        <!-- {{eleve.prenomEleve}}{{eleve.emailEleve}}{{eleve.telephoneEleve}}
-                        {{eleve.ageEleve}}{{eleve.adresseEleve}} -->
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+              </div>
+      
+        
+           
+        
+</div>
 </section>

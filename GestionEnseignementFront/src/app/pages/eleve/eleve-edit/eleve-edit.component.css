@@ -1,0 +1,71 @@
+
+
+body{
+    background: rgb(219,226,226);
+   
+  }
+  h1{
+   
+    font-size: 5 rem;
+    font-weight: 800px;
+  }
+  .row {
+    padding-top: 0px;
+    padding-bottom: 50px;
+    background: white;
+    border-radius :30px;
+    box-shadow: 20px 20px 22px grey;
+  }
+  .img-fluid{
+  background-size: cover;
+  height: 400px;
+  }
+  
+  img{
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-LEFT-radius: 30px;
+  
+  }
+  .btn-annulation{
+    border: none;
+    outline:none;
+    height:50px;
+    width: 100px;
+    background:linear-gradient(to top, rgb(0, 162, 255), rgb(0, 255, 255));
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  .btn-validation{
+  background:linear-gradient(to top, rgb(12, 189, 243), rgb(0, 255, 119));
+  border:1px solid;
+  
+  
+  }
+  .no-gutters {
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  
+  
+
+  .mat-dialog-container {
+    padding: 300px;
+    width: 600px;
+  }
+  .formulaire{
+
+ 
+    width: 900px;
+    height:500px;
+    padding: 0px;
+    margin: 0px;
+  
+  }
+  .titre{
+    margin-left: 410px;
+    color:rgb(0, 183, 255);
+  }
+ 
