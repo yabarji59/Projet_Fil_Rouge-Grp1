@@ -22,26 +22,25 @@
                     
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input for="nom" name="nom" class="form-control my-3 p-4" type="text" formControlName="nom">
+                            <input for="nom" name="nom" class="form-control my-3 p-4" type="text" formControlName="nomEleve" placeholder="Nom">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input name="prenom" class="form-control my-3 p-4" type="text" formControlName="prenom">
+                            <input name="prenom" class="form-control my-3 p-4" type="text" formControlName="prenomEleve" placeholder="Prénom">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input name="age" class="form-control my-3 p-4" type="text" formControlName="age">
+                            <input name="age" class="form-control my-3 p-4" type="text" formControlName="ageEleve" placeholder="Age">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input name="telephone" class="form-control my-3 p-4" type="text"
-                                formControlName="telephone">
+                            <input name="telephone" class="form-control my-3 p-4" type="text" formControlName="telephoneEleve" placeholder="Téléphone">
                         </div>
                     </div>
 
@@ -49,7 +48,7 @@
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input name="email" class="form-control my-3 p-4" type="text" formControlName="email">
+                            <input name="email" class="form-control my-3 p-4" type="text" formControlName="emailEleve" placeholder="Email">
                         </div>
 
                     </div>
@@ -57,7 +56,7 @@
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input name="adresse" class="form-control my-3 p-4" type="text" formControlName="adresse">
+                            <input name="adresse" class="form-control my-3 p-4" type="text" formControlName="adresseEleve"  placeholder="Adresse">
                         </div>
 
                     </div>
@@ -79,7 +78,8 @@
                         
                             <button *ngIf="!editForm" type="button" class="btn btn-validation mt-3 mb-5"(click)="addEleve()">Valider</button>
                             &nbsp;
-                            <button *ngIf="!editForm" type="button" class="btn btn-validation mt-3 mb-5"(click)="updateEleve()">Modifier</button>
+                            <button type="button" class="btn btn-validation mt-3 mb-5" (click)="closeModal()">Annuler</button>
+
                       
                     </div>
 

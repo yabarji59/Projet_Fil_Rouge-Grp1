@@ -19,21 +19,25 @@ export class EleveEditComponent implements OnInit {
     private eleveService: EleveService,
     private matDialog: MatDialog,
     public formBuilder: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) 
-    public dialogData: any) {
+    @Inject(MAT_DIALOG_DATA) public dialogData: any) {
+      
       this.addEleveForm = this.formBuilder.group({
-        nomEleve: ['', Validators.maxLength(1000)],
-        prenomEleve: ['', Validators.maxLength(1000)],
-        email: ['', Validators.maxLength(1000)],
-        telephoneEleve: ['', Validators.maxLength(1000)],
-        ageEleve: ['', Validators.maxLength(1000)],
-        adresseEleve: ['', Validators.maxLength(1000)],
+        nomEleve: ['', Validators.maxLength(20)],
+        prenomEleve: ['', Validators.maxLength(20)],
+        email: ['', Validators.maxLength(50)],
+        telephoneEleve: ['', Validators.maxLength(20)],
+        ageEleve: ['', Validators.maxLength(100)],
+        adresseEleve: ['', Validators.maxLength(100)],
       });
+
+
+      
     if(this.dialogData.modalType == 'edit'){
-      this.titre ='Modifier un eleve';
+       this.titre ='Modifier un eleve';
       this.editForm= true;
       this.eleveGet= this.dialogData.eleve;
-      this.addEleveForm.setValue({
+      //this.addEleveForm.setValue 
+      ({
         nomEleve: this.dialogData.eleve.nomEleve,
         prenomEleve: this.dialogData.eleve.prenomEleve,
         emailEleve: this.dialogData.eleve.emailEleve,
@@ -41,10 +45,13 @@ export class EleveEditComponent implements OnInit {
         ageEleve: this.dialogData.eleve.ageEleve,
         adresseEleve: this.dialogData.eleve.nomEleve,
         
-      });
-    } else {
-      this.titre ='Ajouter un eleve';
-    }
+       });
+       } else {
+       this.titre ='Ajouter un eleve';
+
+
+       
+     }
     
     }
 

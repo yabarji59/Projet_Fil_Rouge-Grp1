@@ -56,4 +56,6 @@ export class EleveComponent implements OnInit {
       this.eleveList= data;
     }));
   }
+
+  
 }
