@@ -19,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fr.gestion.service.IClasseService;
 import com.fr.gestion.service.IUtilisateurService;
-import com.fr.gestion.web.model.ClasseDto;
 import com.fr.gestion.web.model.UtilisateurDto;
 
 /**
